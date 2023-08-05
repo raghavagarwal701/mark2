@@ -6,7 +6,7 @@ const App = () => {
   const questionnaire = useMemo(() => ({
     essential1: [
       {
-        question: "Access Control: Is there a centralized system for managing user access rights and permissions to critical systems and data?",
+        question: "Essential one :- Access Control: Is there a centralized system for managing user access rights and permissions to critical systems and data?",
         options: [
           ["Not Implemented: The organization has not implemented any centralized system for managing user access rights and permissions to critical systems and data.", 0], 
           ["Initial Implementation: The organization has started implementing a centralized system for managing user access rights and permissions, but it is not fully operational or covers all critical systems and data.", 1],
@@ -16,7 +16,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Incident Response: Is there a documented incident response plan that outlines the steps to be taken in the event of a cyber incident?",
+        question: "Essential one :- Incident Response: Is there a documented incident response plan that outlines the steps to be taken in the event of a cyber incident?",
         options: [
           ["Not Implemented: The organization does not have a documented incident response plan outlining the steps to be taken in the event of a cyber incident", 0], 
           ["Initial Development: The organization has started developing an incident response plan, but it is not yet fully documented or comprehensive.", 1],
@@ -27,7 +27,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Patch Management: Are there procedures in place for regularly applying security patches to operating systems and software?",
+        question: "Essential one :- Patch Management: Are there procedures in place for regularly applying security patches to operating systems and software?",
         options: [
           ["Not Implemented: The organization does not have procedures in place for regularly applying security patches to operating systems and software.", 0], 
           ["Initial Implementation: The organization has started implementing patch management procedures, but they are not yet consistently applied or may not cover all systems and software.", 1],
@@ -38,7 +38,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Data Protection: Is data encryption used to protect sensitive information stored on company devices or transmitted over networks?",
+        question: "Essential one :- Data Protection: Is data encryption used to protect sensitive information stored on company devices or transmitted over networks?",
         options: [
           ["Not Implemented: Data encryption is not used to protect sensitive information stored on company devices or transmitted over networks.", 0], 
           ["Initial Implementation: The organization has started to implement data encryption for sensitive information, but it is not yet consistently applied across all devices and network transmissions.", 1],
@@ -51,7 +51,7 @@ const App = () => {
     ],
     essential2: [
       {
-        question: "Patch Applications: Is there a documented process for assessing software applications for security vulnerabilities and updates?",
+        question: "Essential Two :- Patch Applications: Is there a documented process for assessing software applications for security vulnerabilities and updates?",
         options: [
           ["Not Implemented: The organization does not have a documented process for assessing software applications for security vulnerabilities and updates.", 0], 
           ["Initial Development: The organization has started developing a process for assessing software applications for security vulnerabilities and updates, but it is not yet fully documented or consistently applied.", 1],
@@ -62,7 +62,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Patch Testing: Are non-critical patches tested for compatibility and stability before deployment?",
+        question: "Essential Two :- Patch Testing: Are non-critical patches tested for compatibility and stability before deployment?",
         options: [
           ["Not Implemented: The organization does not have a process for testing non-critical patches for compatibility and stability before deployment.", 0], 
           ["Initial Development: The organization has started developing a process for testing non-critical patches, but it is not yet fully established or consistently applied. ", 1],
@@ -73,7 +73,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Emergency Patching: Is there a process for emergency patching to address critical security vulnerabilities?",
+        question: "Essential Two :- Emergency Patching: Is there a process for emergency patching to address critical security vulnerabilities?",
         options: [
           ["Not Implemented: The organization does not have a process for emergency patching to address critical security vulnerabilities.", 0], 
           ["Initial Development: The organization has started developing a process for emergency patching, but it is not yet fully established or consistently followed.", 1],
@@ -84,7 +84,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Patch Verification: Are there procedures to monitor and verify the successful application of software patches across the organization",
+        question: "Essential Two :- Patch Verification: Are there procedures to monitor and verify the successful application of software patches across the organization",
         options: [
           ["Not Implemented: The organization does not have procedures to monitor and verify the successful application of software patches across the organization.", 0], 
           ["Initial Development: The organization has started developing procedures for patch verification, but they are not yet fully established or consistently followed.", 1],
@@ -97,7 +97,7 @@ const App = () => {
     ],
     essential3: [
       {
-        question: "Microsoft Office Macro Settings: Is there a documented policy or procedure for configuring Microsoft Office macro settings?",
+        question: "Essential Three :- Microsoft Office Macro Settings: Is there a documented policy or procedure for configuring Microsoft Office macro settings?",
         options: [
           ["Not Documented: The organization does not have a documented policy or procedure for configuring Microsoft Office macro settings.", 0], 
           ["Initial Documentation: The organization has started documenting a policy or procedure for configuring Microsoft Office macro settings, but it is not yet fully comprehensive or consistently followed.", 1],
@@ -108,7 +108,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Blocking Macros: Are Microsoft Office macro settings not configured to block macros from the internet and external sources?",
+        question: "Essential Three :- Blocking Macros: Are Microsoft Office macro settings not configured to block macros from the internet and external sources?",
         options: [
           ["Not Configured: Microsoft Office macro settings are not configured to block macros from the internet and external sources.", 0],
           ["Partially Configured: Microsoft Office macro settings are partially configured to block macros from the internet and external sources, but there may be some exceptions or loopholes.", 1],
@@ -119,7 +119,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Evaluating Macros: Is there no process to evaluate and enable macros from trusted sources on a case-by-case basis?",
+        question: "Essential Three :- Evaluating Macros: Is there no process to evaluate and enable macros from trusted sources on a case-by-case basis?",
         options: [
           ["Not Implemented: The organization does not have a process to evaluate and enable macros from trusted sources on a case-by-case basis.", 0],
           ["Initial Development: The organization has started developing a process to evaluate and enable macros from trusted sources on a case-by-case basis, but it is not yet fully established or consistently followed.", 1],
@@ -130,7 +130,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Employee Education: Are employees not educated about the risks associated with enabling macros from unknown or untrusted sources?",
+        question: "Essential Three :- Employee Education: Are employees not educated about the risks associated with enabling macros from unknown or untrusted sources?",
         options: [
           ["Not Educated: Employees are not educated about the risks associated with enabling macros from unknown or untrusted sources.", 0],
           ["Initial Education: The organization has started providing education to employees about the risks associated with enabling macros from unknown or untrusted sources, but it is not yet fully comprehensive or consistently conducted.", 1],
@@ -141,7 +141,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Macro Antivirus Scanning: Is macro antivirus scanning not enabled to detect and block potentially malicious macros?",
+        question: "Essential Three :- Macro Antivirus Scanning: Is macro antivirus scanning not enabled to detect and block potentially malicious macros?",
         options: [
           ["Not Enabled: Macro antivirus scanning is not enabled to detect and block potentially malicious macros.", 0],
           ["Partially Enabled: Macro antivirus scanning is partially enabled, but it may not be consistently applied or may have limited coverage for detecting and blocking potentially malicious macros.", 1],
@@ -155,7 +155,7 @@ const App = () => {
     ],
     essential4: [
       {
-        question: "Security Features for User Applications: Are web browsers and email clients not configured with security features like pop-up blockers, script blocking, and secure browsing?",
+        question: "Essential Four :- Security Features for User Applications: Are web browsers and email clients not configured with security features like pop-up blockers, script blocking, and secure browsing?",
         options: [
           ["Not Configured: Web browsers and email clients are not configured with security features like pop-up blockers, script blocking, and secure browsing.", 0],
           ["Partially Configured: Security features for web browsers and email clients are partially configured, but there may be some missing features or inconsistencies in their implementation.", 1],
@@ -166,7 +166,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Security Training for Employees: Are employees not regularly trained to identify and report suspicious emails, phishing attempts, and social engineering attacks?",
+        question: "Essential Four :- Security Training for Employees: Are employees not regularly trained to identify and report suspicious emails, phishing attempts, and social engineering attacks?",
         options: [
           ["Not Provided: Employees are not regularly trained to identify and report suspicious emails, phishing attempts, and social engineering attacks.", 0],
           ["Infrequent Training: Employees receive security training, but it is infrequent and may not cover all aspects of identifying and reporting suspicious emails, phishing attempts, and social engineering attacks.", 1],
@@ -177,7 +177,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Assessment of Security Settings: Is there no process to assess and strengthen the security settings of user applications based on their specific needs and risk profiles?",
+        question: "Essential Four :- Assessment of Security Settings: Is there no process to assess and strengthen the security settings of user applications based on their specific needs and risk profiles?",
         options: [
           ["Not Implemented: There is no process to assess and strengthen the security settings of user applications based on their specific needs and risk profiles.", 0],
           ["Initial Development: Efforts have started to develop a process to assess and strengthen the security settings of user applications based on their specific needs and risk profiles, but it is not yet fully established or consistently followed.", 1],
@@ -188,7 +188,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Review and Update of Security Configurations: Is there no effort to review and update security configurations to align with current threats and best practices?",
+        question: "Essential Four :- Review and Update of Security Configurations: Is there no effort to review and update security configurations to align with current threats and best practices?",
         options: [
           ["Not Performed: There is no effort to review and update security configurations to align with current threats and best practices.", 0],
           ["Initial Efforts: Some initial efforts have been made to review and update security configurations, but it is not yet a consistent or comprehensive practice.", 1],
@@ -199,7 +199,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Timely Deployment of Software Updates: Are software updates and security patches for user applications not deployed in a timely manner?",
+        question: "Essential Four :- Timely Deployment of Software Updates: Are software updates and security patches for user applications not deployed in a timely manner?",
         options: [
           ["Not Timely: Software updates and security patches for user applications are not deployed in a timely manner.", 0],
           ["Infrequent Updates: Software updates and security patches are deployed, but the frequency of updates is infrequent and may not keep up with the latest releases.", 1],
@@ -212,7 +212,7 @@ const App = () => {
     ],
     essential5: [
       {
-        question: "Restrict Administrative Privileges: Is there a documented policy or procedure for restricting administrative privileges?",
+        question: "Essential Five :- Restrict Administrative Privileges: Is there a documented policy or procedure for restricting administrative privileges?",
         options: [
           ["Not Documented: There is no documented policy or procedure for restricting administrative privileges.", 0],
           ["Initial Development: Efforts have started to develop a policy or procedure for restricting administrative privileges, but it is not yet fully established or consistently followed.", 1],
@@ -223,7 +223,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Principle of Least Privilege: Is the principle of least privilege not consistently applied to grant administrative access only when necessary for specific job roles?",
+        question: "Essential Five :- Principle of Least Privilege: Is the principle of least privilege not consistently applied to grant administrative access only when necessary for specific job roles?",
         options: [
           ["Not Applied: The principle of least privilege is not consistently applied, and administrative access may not be restricted to only necessary job roles.", 0],
           ["Partially Applied: The principle of least privilege is partially applied, but there may be instances where administrative access is granted beyond what is necessary for specific job roles.", 1],
@@ -234,7 +234,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Administrative Privilege Review: Are administrative privileges not regularly reviewed and revoked for employees who no longer require them?",
+        question: "Essential Five :- Administrative Privilege Review: Are administrative privileges not regularly reviewed and revoked for employees who no longer require them?",
         options: [
           ["Not Reviewed: Administrative privileges are not regularly reviewed, and there may be employees who still retain unnecessary privileges even though they no longer require them.", 0],
           ["Infrequent Review: Administrative privileges are reviewed, but the review process is infrequent and may not cover all employees, leading to some retaining unnecessary privileges.", 1],
@@ -245,7 +245,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Employee Awareness: Are employees not informed about the risks associated with administrative privileges and the measures to protect them?",
+        question: "Essential Five :- Employee Awareness: Are employees not informed about the risks associated with administrative privileges and the measures to protect them?",
         options: [
           ["Not Informed: Employees are not informed about the risks associated with administrative privileges and the measures to protect them.", 0],
           ["Partially Informed: Some employees have been informed about the risks associated with administrative privileges and the measures to protect them, but not all employees are aware of these risks and measures.", 1],
@@ -256,7 +256,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Monitoring and Auditing: Is there no process to monitor and audit administrative actions to detect potential misuse or unauthorized access?",
+        question: "Essential Five :- Monitoring and Auditing: Is there no process to monitor and audit administrative actions to detect potential misuse or unauthorized access?",
         options: [
           ["Not Implemented: There is no process to monitor and audit administrative actions to detect potential misuse or unauthorized access.", 0],
           ["Initial Development: Efforts have started to develop a process to monitor and audit administrative actions, but it is not yet fully established or consistently followed.", 1],
@@ -269,7 +269,7 @@ const App = () => {
     ],
     essential6: [
       {
-        question: "Documented Process for Patching Operating Systems: Is there no documented process for testing and deploying operating system patches across the organization?",
+        question: "Essential Six :- Documented Process for Patching Operating Systems: Is there no documented process for testing and deploying operating system patches across the organization?",
         options: [
           ["Not Documented: There is no documented process for testing and deploying operating system patches across the organization.", 0],
           ["Initial Development: Efforts have started to develop a documented process for testing and deploying operating system patches, but it is not yet fully established or consistently followed.", 1],
@@ -280,7 +280,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Review Frequency of Operating System Patches: Is there no established frequency for reviewing security updates and patches for operating systems on all devices?",
+        question: "Essential Six :- Review Frequency of Operating System Patches: Is there no established frequency for reviewing security updates and patches for operating systems on all devices?",
         options: [
           ["Not Established: There is no established frequency for reviewing security updates and patches for operating systems on all devices.", 0],
           ["Initial Efforts: Efforts have started to establish a frequency for reviewing security updates and patches for operating systems, but it is not yet consistently followed or formalized.", 1],
@@ -291,7 +291,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Prioritization of Critical Security Patches: Are critical security patches not prioritized and applied promptly to mitigate potential vulnerabilities?",
+        question: "Essential Six :- Prioritization of Critical Security Patches: Are critical security patches not prioritized and applied promptly to mitigate potential vulnerabilities?",
         options: [
           ["Not Prioritized: Critical security patches are not prioritized and applied promptly, leading to delays in mitigating potential vulnerabilities.", 0],
           ["Partially Prioritized: Critical security patches are partially prioritized, and some are applied promptly, but there may be delays in addressing others.", 1],
@@ -302,7 +302,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Challenges with Patching on Different Devices: Are there no specific challenges or considerations identified for patching on different types of devices?",
+        question: "Essential Six :- Challenges with Patching on Different Devices: Are there no specific challenges or considerations identified for patching on different types of devices?",
         options: [
           ["Not Identified: There are no specific challenges or considerations identified for patching on different types of devices.", 0],
           ["Initial Identification: Some initial challenges or considerations have been identified for patching on different types of devices, but they are not yet fully understood or addressed.", 1],
@@ -313,7 +313,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Measurement and Reporting of Patch Management Success: Is there no process in place to measure and report on the success of the patch management process?",
+        question: "Essential Six :- Measurement and Reporting of Patch Management Success: Is there no process in place to measure and report on the success of the patch management process?",
         options: [
           ["Not Implemented: There is no process in place to measure and report on the success of the patch management process.", 0],
           ["Initial Development: Efforts have started to develop a process for measuring and reporting on the success of the patch management process, but it is not yet fully established or consistently followed.", 1],
@@ -326,7 +326,7 @@ const App = () => {
     ],
     essential7: [
       {
-        question: "Multi-factor Authentication (MFA) Implementation: Is multi-factor authentication not implemented for accessing company systems, networks, and sensitive data?",
+        question: "Essential Seven :- Multi-factor Authentication (MFA) Implementation: Is multi-factor authentication not implemented for accessing company systems, networks, and sensitive data?",
         options: [
           ["Not Implemented: Multi-factor authentication (MFA) is not implemented for accessing company systems, networks, and sensitive data.", 0],
           ["Initial Implementation: Efforts have started to implement multi-factor authentication (MFA) for accessing company systems, networks, and sensitive data, but it is not yet fully rolled out or consistently applied.", 1],
@@ -337,7 +337,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Employee Education: Are employees not educated on the importance of using MFA and the risks associated with single-factor authentication?",
+        question: "Essential Seven :- Employee Education: Are employees not educated on the importance of using MFA and the risks associated with single-factor authentication?",
         options: [
           ["Not Implemented: Multi-factor authentication (MFA) is not implemented for accessing company systems, networks, and sensitive data.", 0],
           ["Initial Implementation: Efforts have started to implement multi-factor authentication (MFA) for accessing company systems, networks, and sensitive data, but it is not yet fully rolled out or consistently applied.", 1],
@@ -348,7 +348,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Review Process: Is there no periodic review process for assessing and strengthening the implementation of MFA?",
+        question: "Essential Seven :- Review Process: Is there no periodic review process for assessing and strengthening the implementation of MFA?",
         options: [
           ["Not Implemented: There is no periodic review process for assessing and strengthening the implementation of MFA.", 0],
           ["Initial Development: Efforts have started to develop a periodic review process for assessing and strengthening MFA implementation, but it is not yet fully established or consistently followed.", 1],
@@ -359,7 +359,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Balancing Security and Convenience: Is there no consideration given to balancing security and user convenience regarding MFA methods?",
+        question: "Essential Seven :- Balancing Security and Convenience: Is there no consideration given to balancing security and user convenience regarding MFA methods?",
         options: [
           ["Not Considered: There is no consideration given to balancing security and user convenience regarding MFA methods. Security and convenience are not balanced effectively.", 0],
           ["Initial Consideration: Some initial consideration is given to balancing security and user convenience regarding MFA methods, but it is not yet fully implemented or consistently applied.", 1],
@@ -370,7 +370,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Backup Plan: Is there no backup plan in case MFA methods (e.g., authenticator apps) become unavailable?",
+        question: "Essential Seven :- Backup Plan: Is there no backup plan in case MFA methods (e.g., authenticator apps) become unavailable?",
         options: [
           ["No Backup Plan: There is no backup plan in case MFA methods (e.g., authenticator apps) become unavailable.", 0],
           ["Initial Development: Efforts have started to develop a backup plan in case MFA methods become unavailable, but it is not yet fully established or consistently followed.", 1],
@@ -383,7 +383,7 @@ const App = () => {
     ],
     essential8: [
       {
-        question: "Regular Backups: Are critical company data and systems not regularly backed up to secure and isolated locations?",
+        question: "Essential Eight :- Regular Backups: Are critical company data and systems not regularly backed up to secure and isolated locations?",
         options: [
           ["Not Implemented: Critical company data and systems are not regularly backed up to secure and isolated locations.", 0],
           ["Infrequent Backups: Backups for critical company data and systems are infrequent, and they may not be stored in secure and isolated locations consistently.", 1],
@@ -394,7 +394,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Data Restoration Testing: Is there no process for testing the restoration of data from backups to ensure data integrity?",
+        question: "Essential Eight :- Data Restoration Testing: Is there no process for testing the restoration of data from backups to ensure data integrity?",
         options: [
           ["Not Implemented: There is no process for testing the restoration of data from backups to ensure data integrity.", 0],
           ["Initial Development: Efforts have started to develop a process for testing the restoration of data from backups, but it is not yet fully established or consistently followed.", 1],
@@ -405,7 +405,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Employee Awareness: Are employees not informed about the importance of backups and their role in the backup process?",
+        question: "Essential Eight :- Employee Awareness: Are employees not informed about the importance of backups and their role in the backup process?",
         options: [
           ["Not Informed: Employees are not informed about the importance of backups and their role in the backup process.", 0],
           ["Partially Informed: Some employees have received information about the importance of backups and their role in the backup process, but not all employees are aware of these factors.", 1],
@@ -416,7 +416,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Backup Encryption: Are backups not encrypted to protect sensitive data from unauthorized access?",
+        question: "Essential Eight :- Backup Encryption: Are backups not encrypted to protect sensitive data from unauthorized access?",
         options: [
           ["Not Encrypted: Backups are not encrypted, and sensitive data is not protected from unauthorized access.", 0],
           ["Partially Encrypted: Some backups are encrypted to protect sensitive data, but not all backups have encryption applied consistently.", 1],
@@ -427,7 +427,7 @@ const App = () => {
         choosedOption: null,
       },
       {
-        question: "Backup Testing: Are backups not regularly tested for recoverability and compliance with data retention policies?",
+        question: "Essential Eight :- Backup Testing: Are backups not regularly tested for recoverability and compliance with data retention policies?",
         options: [
           ["Not Tested: Backups are not regularly tested for recoverability, and there is no assessment of compliance with data retention policies.", 0],
           ["Infrequent Testing: Backups are infrequently tested for recoverability and compliance with data retention policies, and the testing process may not be consistent.", 1],
