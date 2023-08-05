@@ -441,7 +441,7 @@ const App = () => {
     ],
   }), []);
 
-  const [completedEssentials, setCompletedEssentials] = useState([]);
+  // const [completedEssentials, setCompletedEssentials] = useState([]);
   const [userResponses, setUserResponses] = useState({});
   const [currentEssential, setcurrentEssential] = useState(1);
   const [currentQuestion,setCurrentQuestion]=useState(0);
@@ -487,13 +487,13 @@ const App = () => {
       }
     }
   };
-  useEffect(() => {
-    // This will be triggered whenever currentQuestion or currentEssential changes.
-    console.log("called ",currentEssential,currentQuestion);
-    console.log(`essential${currentEssential}`);
-    console.log(questionnaire[`essential${currentEssential}`]);
-    console.log("User Responses:", userResponses);
-  }, [currentEssential, currentQuestion]);
+  // useEffect(() => {
+  //   // This will be triggered whenever currentQuestion or currentEssential changes.
+  //   console.log("called ",currentEssential,currentQuestion);
+  //   console.log(`essential${currentEssential}`);
+  //   console.log(questionnaire[`essential${currentEssential}`]);
+  //   console.log("User Responses:", userResponses);
+  // }, [currentEssential, currentQuestion]);
   
   // Dynamically get the current essential questions based on the current maturity level
   const currentEssentialQuestions = useMemo(
@@ -579,7 +579,7 @@ const App = () => {
       // console.log("heyyyyyyyyy");
       generatePDFReport();
     }
-  }, [isQuestionnaireCompleted]);
+  });
   return (
     <div className="App">
       {isQuestionnaireCompleted ? (
