@@ -506,7 +506,7 @@ const App = () => {
   // const currentQuestionIndex = currentEssentialQuestions.findIndex(
   //   (question) => question.choosedOption === null
   // );
-
+//hollll
   // The questionnaire is completed when there are no more unanswered questions
   const isQuestionnaireCompleted = !currentEssentialQuestions;
   const generatePDFReport = () => {
