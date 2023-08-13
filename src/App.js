@@ -500,20 +500,19 @@ const App = () => {
     () => questionnaire[`essential${currentEssential}`],
     [currentEssential, questionnaire]
   );
-  // console.log(currentEssential);
-  // console.log(currentEssentialQuestions);
-  // Find the index of the first unanswered question in the current essential level
-  // const currentQuestionIndex = currentEssentialQuestions.findIndex(
-  //   (question) => question.choosedOption === null
-  // );
-//hollll
-  // The questionnaire is completed when there are no more unanswered questions
+
+
+
+
+
+  //pdf generation
+
   const isQuestionnaireCompleted = !currentEssentialQuestions;
   const generatePDFReport = () => {
     const doc = new jsPDF({
       orientation: 'portrait',
       unit: 'mm',
-      format: [210, 297], // A4 size (you can adjust the width and height as needed)
+      format: [210, 297],
       compress: true,
       lineHeight: 1.2,
       marginLeft: 10,
@@ -522,21 +521,93 @@ const App = () => {
       marginBottom: 10,
     });
   
-    const titleFont = 'bold 30px Arial';
+    //printing title
+    const titleFont = 'bold Arial';
+    const titleFontSize = 30;
     const titleText = 'User Assessment Report';
-    const titleTextWidth = doc.getTextWidth(titleText);
-
-    // Calculate the x-coordinate to center the title
-    const centerX = (doc.internal.pageSize.width - titleTextWidth) / 2;
-
-    // Draw the title in the center
     doc.setFont(titleFont);
+    doc.setFontSize(titleFontSize);
+    const titleTextWidth = doc.getTextWidth(titleText);
+    const centerX = (doc.internal.pageSize.width - titleTextWidth) / 2;
     doc.text(centerX, 20, titleText);
-    let y = 40;
 
-    // Set the maximum content width to fit within the page
-    const maxWidth = doc.internal.pageSize.width - 25;
-  
+    //printing article
+    let y = 40;
+    const maxWidth = doc.internal.pageSize.width - 35;
+    const articleContent = `
+Introduction:
+In today's digital landscape, cybersecurity has become a critical concern for businesses of all sizes. The complexities of this field can be daunting, especially for those without a technical background. This article aims to break down the Australian Cyber Security Centre's (ACSC) Essential 8 (E8) strategies in simple terms, emphasizing their significance for businesses and offering a non-technical perspective.
+
+Understanding the ACSC and Essential 8:
+The ACSC, a unit under the Australian Signals Directorate (ASD), plays a pivotal role in bolstering Australia's cybersecurity resilience. The E8 strategies are designed to provide essential guidance to businesses across various sectors. Contrary to common misconceptions, these strategies are not just for large corporations or government entities; they apply to businesses of all sizes, safeguarding their digital assets and sensitive data.
+
+Essential 8 Strategies in Layman's Terms:
+1. Application Control:
+Think of it as a digital security guard that only allows trusted software into your systems. By maintaining a list of authorized applications, this strategy prevents unauthorized and potentially harmful programs from gaining access.
+2. Patch Applications:
+Similar to maintaining your car, applying software patches keeps your digital systems up-to-date and secure. These patches address vulnerabilities that cyber attackers might exploit.
+3. Configure Microsoft Office Macro Settings:
+Microsoft Office is widely used, and hackers sometimes exploit its macros for attacks. Properly configuring these settings protects your business from such threats.
+4. User Application Hardening:
+This strategy ensures that your team can recognize and avoid cyber threats when accessing corporate systems. Empowering your employees with cybersecurity knowledge minimizes the risk of human error-related breaches.
+5. Restrict Administrative Privileges:
+Just as you limit access to certain areas of your physical office, restricting administrative privileges limits potential cyber attackers' access to sensitive data.
+6. Patch Operating Systems:
+This strategy involves timely application of patches to your operating systems and applications, safeguarding them against known vulnerabilities.
+7. Multi-Factor Authentication (MFA):
+Imagine an additional layer of security beyond passwords, such as fingerprints or unique codes. MFA enhances account security by adding this extra step during login.
+8. Regular Backups:
+Like a digital safety vault, regular backups ensure your critical data is secure and can be restored in case of cyber incidents or hardware failures.
+
+The Business Perspective:
+Cybersecurity is no longer just an IT issue; it's a business problem. Everyone in your organization plays a role in safeguarding against cyber threats. Here are the common questions addressed:
+
+1. What's in it for me?\nEnhanced Protection: E8 strategies act as a digital shield, boosting your confidence in data security. Reduced Risks: Implementing these strategies significantly lowers the chances of falling victim to cyberattacks. Customer Trust: Prioritizing cybersecurity builds  trust with customers, demonstrating your commitment to their privacy.
+2. Why should I do it now?\nDelaying implementation exposes your business to cyber threats, operational disruptions, financial losses, and reputational damage.
+3. What impact does it have on non-technical users?\nWhile implementing E8 strategies brings changes, they're ultimately beneficial for the business. It's like the extra step you take for online banking security.
+
+Positive Impacts of E8 Implementation:
+1. Improved Cyber Resilience: Better preparedness to withstand and recover from cyber incidents.
+2. Regulatory Compliance: Aligning with industry cybersecurity requirements.
+3. Business Growth: Enhanced confidence from partners, clients, and investors.
+4. Competitive Advantage: Distinguishing your business as cybersecurity-conscious.
+
+Seeking Assistance:
+Cyber Ethos specializes in simplifying complex cybersecurity concepts for businesses. They're dedicated to making your cybersecurity journey seamless and empowering your secure digital navigation.
+
+Conclusion:
+Understanding the Essential 8 strategies in non-technical terms is crucial for all businesses. By prioritizing these strategies, you're not only enhancing protection but also ensuring long-term business success in the digital age. Remember, cybersecurity is a shared responsibility that goes beyond IT departments – it's a commitment to safeguarding your business and its future.
+
+
+
+
+The following is an assessment of your current maturity level based on your
+provided responses.
+    `;
+    const normalFontSize = 12;
+    const largerFontSize = 16;
+    const articleLines = doc.splitTextToSize(articleContent, maxWidth + 255);
+    const lineHeight = doc.getTextDimensions('M').h; // Use 'M' as a dummy character
+    for (let i = 0; i < articleLines.length; i++) {
+      const remainingPageSpace = doc.internal.pageSize.height - y;
+      if (remainingPageSpace < lineHeight) {
+        // Add a new page if remaining space is not enough for the next line
+        doc.addPage();
+        y = 40; // Reset y position for new page
+      }
+      if(articleLines[i].includes('The following is an assessment of your current maturity level based on your')){
+        doc.addPage();
+        y = 40;
+      }
+      if (articleLines[i].includes('Introduction:') || articleLines[i].includes('Understanding the ACSC and Essential 8:') ||articleLines[i].includes('Essential 8 Strategies in Layman\'s Terms:') || articleLines[i].includes('The Business Perspective:') || articleLines[i].includes('Positive Impacts of E8 Implementation:') || articleLines[i].includes('Seeking Assistance:') || articleLines[i].includes('Conclusion:') || articleLines[i].includes('The following is an assessment of your current maturity level based on your') || articleLines[i].includes('provided responses.')) {
+        doc.setFontSize(largerFontSize);
+      } else {
+        doc.setFontSize(normalFontSize);
+      }
+      doc.text(20, y, articleLines[i]);
+      y += lineHeight;
+    }
+
     Object.entries(userResponses).forEach(([question, response]) => {
       const questionText = `Question: ${question}`;
       const responseText = `Maturity Level:  ${response}`;

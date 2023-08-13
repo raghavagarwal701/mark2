@@ -21,7 +21,7 @@ const Question = ({ question, onOptionChange }) => {
     <h1 className="question">{question.question}</h1>
     <form>
     {question.options.map((option, index) => (
-        <>
+        <div className='opt'>
             <input
                 type="radio"
                 id={`option${index}`}
@@ -30,7 +30,7 @@ const Question = ({ question, onOptionChange }) => {
             />
             <label htmlFor={`option${index}`}>{option[0]}</label>
             <br />
-        </>
+        </div>
     ))}
     </form>
     <button onClick={handleNextQuestion}>
