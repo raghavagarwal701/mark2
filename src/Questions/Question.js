@@ -6,8 +6,8 @@ const Question = ({ question, onOptionChange }) => {
     const handleNextQuestion=()=>{
         var selectedOption = document.querySelector('input[name="options"]:checked');
         if(selectedOption){
-            console.log("this is the selected option");
-            console.log(selectedOption.value);
+            // console.log("this is the selected option");
+            // console.log(selectedOption.value);
             onOptionChange(selectedOption.value);
             selectedOption.checked=false;
         }

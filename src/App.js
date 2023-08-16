@@ -521,6 +521,26 @@ const App = () => {
       marginBottom: 10,
     });
   
+    const a4Width = 210; // Width of A4 in mm
+    const a4Height = 297; // Height of A4 in mm
+
+    // Replace 'imagePath' with the actual path to your image
+    const imagePath1 = '1-min.png';
+    const imagePath2 = '2-min.png';
+    const imagePath3 = '3-min.png';
+    // Calculate image dimensions to cover the full page
+    const imageWidth = a4Width;
+    const imageHeight = (a4Width * a4Height) / a4Width; // Maintain aspect ratio
+
+    // Calculate the Y position to center the image vertically
+    const imageY = (a4Height - imageHeight) / 2;
+
+    // Add the image to the PDF
+    doc.addImage(imagePath1, 'PNG', 0, imageY, imageWidth, imageHeight);
+    doc.addPage();
+    doc.addImage(imagePath3, 'PNG', 0, imageY, imageWidth, imageHeight);
+    doc.addPage();
+
     //printing title
     const titleFont = 'bold Arial';
     const titleFontSize = 30;
@@ -633,9 +653,13 @@ provided responses.
       doc.text(20, y + 7, lines);
       y += wrappedTextHeight + 20;
     });
-  
+
+    doc.addPage();
+    doc.addImage(imagePath2, 'PNG', 0, imageY, imageWidth, imageHeight);
     return doc.output('blob'); // Return the PDF content as a Blob
   };
+
+
   const handleDownloadPDF = () => {
     const pdfBlob = generatePDFReport();
     const pdfUrl = URL.createObjectURL(pdfBlob);
@@ -647,10 +671,14 @@ provided responses.
 
   useEffect(() => {
     if (isQuestionnaireCompleted) {
-      // console.log("heyyyyyyyyy");
       generatePDFReport();
     }
   });
+
+
+
+
+
   return (
     <div className="App">
       {isQuestionnaireCompleted ? (
