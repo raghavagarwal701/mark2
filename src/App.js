@@ -528,19 +528,25 @@ const App = () => {
     const imagePath1 = '1-min.png';
     const imagePath2 = '2-min.png';
     const imagePath3 = '3-min.png';
+    const logo  = 'Cyber Ethos Logo.png'
     // Calculate image dimensions to cover the full page
     const imageWidth = a4Width;
     const imageHeight = (a4Width * a4Height) / a4Width; // Maintain aspect ratio
-
     // Calculate the Y position to center the image vertically
     const imageY = (a4Height - imageHeight) / 2;
+
+    const logoWidth = 19.1; // Adjust as needed
+    const logoHeight = 8.9; // Adjust as needed
+
+    const logoX = 10; // X-coordinate (in mm) for the left side margin
+    const logoY = 10; // Y-coordinate (in mm) for the top margin
 
     // Add the image to the PDF
     doc.addImage(imagePath1, 'PNG', 0, imageY, imageWidth, imageHeight);
     doc.addPage();
     doc.addImage(imagePath3, 'PNG', 0, imageY, imageWidth, imageHeight);
     doc.addPage();
-
+    doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
     //printing title
     const titleFont = 'bold Arial';
     const titleFontSize = 30;
@@ -601,11 +607,12 @@ Understanding the Essential 8 strategies in non-technical terms is crucial for a
 
 
 
-The following is an assessment of your current maturity level based on your
-provided responses.
+The following is an assessment of your current maturity level
+based on your provided responses.
     `;
     const normalFontSize = 12;
-    const largerFontSize = 16;
+    const largerFontSize = 18;
+    const fontType = 'helvetica';
     const articleLines = doc.splitTextToSize(articleContent, maxWidth + 255);
     const lineHeight = doc.getTextDimensions('M').h; // Use 'M' as a dummy character
     for (let i = 0; i < articleLines.length; i++) {
@@ -613,18 +620,22 @@ provided responses.
       if (remainingPageSpace < lineHeight) {
         // Add a new page if remaining space is not enough for the next line
         doc.addPage();
+        doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
         y = 40; // Reset y position for new page
       }
-      if(articleLines[i].includes('The following is an assessment of your current maturity level based on your')){
+      if(articleLines[i].includes('The following is an assessment of your current maturity level')){
         doc.addPage();
+        doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
         y = 40;
       }
-      if (articleLines[i].includes('Introduction:') || articleLines[i].includes('Understanding the ACSC and Essential 8:') ||articleLines[i].includes('Essential 8 Strategies in Layman\'s Terms:') || articleLines[i].includes('The Business Perspective:') || articleLines[i].includes('Positive Impacts of E8 Implementation:') || articleLines[i].includes('Seeking Assistance:') || articleLines[i].includes('Conclusion:') || articleLines[i].includes('The following is an assessment of your current maturity level based on your') || articleLines[i].includes('provided responses.')) {
+      if (articleLines[i].includes('Introduction:') || articleLines[i].includes('Understanding the ACSC and Essential 8:') ||articleLines[i].includes('Essential 8 Strategies in Layman\'s Terms:') || articleLines[i].includes('The Business Perspective:') || articleLines[i].includes('Positive Impacts of E8 Implementation:') || articleLines[i].includes('Seeking Assistance:') || articleLines[i].includes('Conclusion:') || articleLines[i].includes('The following is an assessment of your current maturity level') || articleLines[i].includes('based on your provided responses.')) {
+        doc.setFont(fontType);
         doc.setFontSize(largerFontSize);
-      } else {
+      } 
+      else {
         doc.setFontSize(normalFontSize);
       }
-      doc.text(20, y, articleLines[i]);
+      doc.text(14, y, articleLines[i]);
       y += lineHeight;
     }
 
@@ -644,10 +655,9 @@ provided responses.
       if (y + wrappedTextHeight + 10 > doc.internal.pageSize.height) {
         // Check if the content will exceed the page height
         doc.addPage(); // Add a new page if necessary
-        y = 20; // Reset the vertical position for new page
+        doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
+        y = 20 + logoHeight; // Reset the vertical position for new page
       }
-  
-      // doc.text(20, y, questionText);
       doc.text(20, y, liness);
       y += wrappedTextHeights;
       doc.text(20, y + 7, lines);
