@@ -529,6 +529,7 @@ const App = () => {
     const imagePath2 = '2-min.png';
     const imagePath3 = '3-min.png';
     const logo  = 'Cyber Ethos Logo.png'
+    const bg = 'bg.png'
     // Calculate image dimensions to cover the full page
     const imageWidth = a4Width;
     const imageHeight = (a4Width * a4Height) / a4Width; // Maintain aspect ratio
@@ -546,6 +547,7 @@ const App = () => {
     doc.addPage();
     doc.addImage(imagePath3, 'PNG', 0, imageY, imageWidth, imageHeight);
     doc.addPage();
+    doc.addImage(bg, 'PNG', 0, imageY, imageWidth, imageHeight);
     doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
     //printing title
     const titleFont = 'bold Arial';
@@ -553,6 +555,8 @@ const App = () => {
     const titleText = 'User Assessment Report';
     doc.setFont(titleFont);
     doc.setFontSize(titleFontSize);
+    // Set the font color to yellow (RGB: 255, 255, 0)
+    doc.setTextColor(251, 205, 50);
     const titleTextWidth = doc.getTextWidth(titleText);
     const centerX = (doc.internal.pageSize.width - titleTextWidth) / 2;
     doc.text(centerX, 20, titleText);
@@ -620,19 +624,24 @@ based on your provided responses.
       if (remainingPageSpace < lineHeight) {
         // Add a new page if remaining space is not enough for the next line
         doc.addPage();
+        doc.addImage(bg, 'PNG', 0, imageY, imageWidth, imageHeight);
         doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
         y = 40; // Reset y position for new page
       }
       if(articleLines[i].includes('The following is an assessment of your current maturity level')){
         doc.addPage();
+        doc.addImage(bg, 'PNG', 0, imageY, imageWidth, imageHeight);
         doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
         y = 40;
       }
       if (articleLines[i].includes('Introduction:') || articleLines[i].includes('Understanding the ACSC and Essential 8:') ||articleLines[i].includes('Essential 8 Strategies in Layman\'s Terms:') || articleLines[i].includes('The Business Perspective:') || articleLines[i].includes('Positive Impacts of E8 Implementation:') || articleLines[i].includes('Seeking Assistance:') || articleLines[i].includes('Conclusion:') || articleLines[i].includes('The following is an assessment of your current maturity level') || articleLines[i].includes('based on your provided responses.')) {
         doc.setFont(fontType);
         doc.setFontSize(largerFontSize);
+        doc.setTextColor(251, 205, 50);
       } 
       else {
+        // Set the font color to white (RGB: 255, 255, 255)
+        doc.setTextColor(255, 255, 255);
         doc.setFontSize(normalFontSize);
       }
       doc.text(14, y, articleLines[i]);
@@ -655,9 +664,11 @@ based on your provided responses.
       if (y + wrappedTextHeight + 10 > doc.internal.pageSize.height) {
         // Check if the content will exceed the page height
         doc.addPage(); // Add a new page if necessary
+        doc.addImage(bg, 'PNG', 0, imageY, imageWidth, imageHeight);
         doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
         y = 20 + logoHeight; // Reset the vertical position for new page
       }
+      doc.setTextColor(255, 255, 255);
       doc.text(20, y, liness);
       y += wrappedTextHeights;
       doc.text(20, y + 7, lines);
