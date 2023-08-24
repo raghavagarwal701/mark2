@@ -447,13 +447,13 @@ const App = () => {
 
   const essentialNames = {
     essential1: "Application Control",
-    essential2: "Patch Management",
-    essential3: "Application Control",
-    essential4: "Patch Management",
-    essential5: "Application Control",
-    essential6: "Patch Management",
-    essential7: "Application Control",
-    essential8: "Patch Management",
+    essential2: "Patch Applications",
+    essential3: "Configure Microsoft Office Macro Settings",
+    essential4: "User Application Hardening",
+    essential5: "Restrict Administrative Privileges",
+    essential6: "Patch Operating Systems",
+    essential7: "Multi-Factor Authentication",
+    essential8: "Regular Backups",
   };
   
   // const [completedEssentials, setCompletedEssentials] = useState([]);
@@ -577,65 +577,33 @@ const App = () => {
     doc.setTextColor(251, 205, 50);
     const titleTextWidth = doc.getTextWidth(titleText);
     const centerX = (doc.internal.pageSize.width - titleTextWidth) / 2;
-    doc.text(centerX, 20, titleText);
+    // doc.text(centerX, 20, titleText);
 
     //printing article
     let y = 40;
     const maxWidth = doc.internal.pageSize.width - 35;
     const articleContent = `
-Introduction:
-In today's digital landscape, cybersecurity has become a critical concern for businesses of all sizes. The complexities of this field can be daunting, especially for those without a technical background. This article aims to break down the Australian Cyber Security Centre's (ACSC) Essential 8 (E8) strategies in simple terms, emphasizing their significance for businesses and offering a non-technical perspective.
+Our Unique Proposition (USP): Cyber Ethos stands out with its practitioner-led approach and commitment to customers. Our USP revolves around three key pillars:
 
-Understanding the ACSC and Essential 8:
-The ACSC, a unit under the Australian Signals Directorate (ASD), plays a pivotal role in bolstering Australia's cybersecurity resilience. The E8 strategies are designed to provide essential guidance to businesses across various sectors. Contrary to common misconceptions, these strategies are not just for large corporations or government entities; they apply to businesses of all sizes, safeguarding their digital assets and sensitive data.
+1) Holistic Cybersecurity Strategies, providing comprehensive programs aligned with business objectives;
+2) Translating Complexity into Actionable Insights, making cybersecurity understandable and enabling informed risk decisions; and
+3) Empowering Cybersecurity Awareness and Education, bridging the knowledge gap within organizations.
 
-Essential 8 Strategies in Layman's Terms:
-1. Application Control:
-Think of it as a digital security guard that only allows trusted software into your systems. By maintaining a list of authorized applications, this strategy prevents unauthorized and potentially harmful programs from gaining access.
-2. Patch Applications:
-Similar to maintaining your car, applying software patches keeps your digital systems up-to-date and secure. These patches address vulnerabilities that cyber attackers might exploit.
-3. Configure Microsoft Office Macro Settings:
-Microsoft Office is widely used, and hackers sometimes exploit its macros for attacks. Properly configuring these settings protects your business from such threats.
-4. User Application Hardening:
-This strategy ensures that your team can recognize and avoid cyber threats when accessing corporate systems. Empowering your employees with cybersecurity knowledge minimizes the risk of human error-related breaches.
-5. Restrict Administrative Privileges:
-Just as you limit access to certain areas of your physical office, restricting administrative privileges limits potential cyber attackers' access to sensitive data.
-6. Patch Operating Systems:
-This strategy involves timely application of patches to your operating systems and applications, safeguarding them against known vulnerabilities.
-7. Multi-Factor Authentication (MFA):
-Imagine an additional layer of security beyond passwords, such as fingerprints or unique codes. MFA enhances account security by adding this extra step during login.
-8. Regular Backups:
-Like a digital safety vault, regular backups ensure your critical data is secure and can be restored in case of cyber incidents or hardware failures.
+Services Offered: Our range of cybersecurity services includes managed services for proactive monitoring and incident response, advisory and consulting for tailored guidance, board-level expertise to align cybersecurity with business objectives, audits to identify gaps and compliance requirements, and vulnerability scanning with penetration testing to assess and improve your Cyber posture.
 
-The Business Perspective:
-Cybersecurity is no longer just an IT issue; it's a business problem. Everyone in your organization plays a role in safeguarding against cyber threats. Here are the common questions addressed:
-
-1. What's in it for me?\nEnhanced Protection: E8 strategies act as a digital shield, boosting your confidence in data security. Reduced Risks: Implementing these strategies significantly lowers the chances of falling victim to cyberattacks. Customer Trust: Prioritizing cybersecurity builds  trust with customers, demonstrating your commitment to their privacy.
-2. Why should I do it now?\nDelaying implementation exposes your business to cyber threats, operational disruptions, financial losses, and reputational damage.
-3. What impact does it have on non-technical users?\nWhile implementing E8 strategies brings changes, they're ultimately beneficial for the business. It's like the extra step you take for online banking security.
-
-Positive Impacts of E8 Implementation:
-1. Improved Cyber Resilience: Better preparedness to withstand and recover from cyber incidents.
-2. Regulatory Compliance: Aligning with industry cybersecurity requirements.
-3. Business Growth: Enhanced confidence from partners, clients, and investors.
-4. Competitive Advantage: Distinguishing your business as cybersecurity-conscious.
-
-Seeking Assistance:
-Cyber Ethos specializes in simplifying complex cybersecurity concepts for businesses. They're dedicated to making your cybersecurity journey seamless and empowering your secure digital navigation.
-
-Conclusion:
-Understanding the Essential 8 strategies in non-technical terms is crucial for all businesses. By prioritizing these strategies, you're not only enhancing protection but also ensuring long-term business success in the digital age. Remember, cybersecurity is a shared responsibility that goes beyond IT departments – it's a commitment to safeguarding your business and its future.
+Conclusion: With Cyber Ethos, businesses gain unparalleled cybersecurity expertise, customized strategies, and holistic solutions. Safeguard your data, secure your future, and gain a competitive edge. Contact us today by visiting our website www.cyberethos.com.au and/or by calling 1800 CETHOS (1800-238-467) and embark on a journey towards fortified cybersecurity and lasting success.
 
 
+In today's rapidly evolving digital landscape, the security of your organisation's sensitive information and critical assets is paramount. As we embark on this journey of cybersecurity exploration, we are excited to present to you an assessment of your Essential 8 maturity based on your responses to our questionnaire. Our analysis examines the key aspects that directly impact your cybersecurity posture based on your responses. It offers a clear and non-technical understanding of your organisation's current state of cybersecurity preparedness from an Essential 8 perspective. This report aims to empower your decision-making by providing you what Cyber Ethos believes is your current state, from your responses. We hope this will assist you in an informed decision making in fortifying your defences and ensuring a robust cybersecurity foundation.
 
-
+Thank you for entrusting us with this critical endeavour. We will reach out to you in the coming period to discuss your report and assisting you in safeguarding your digital future.
 The following is an assessment of your current maturity level
 based on your provided responses.
     `;
-    const normalFontSize = 12;
+    const normalFontSize = 16;
     const largerFontSize = 18;
     const fontType = 'helvetica';
-    const articleLines = doc.splitTextToSize(articleContent, maxWidth + 255);
+    const articleLines = doc.splitTextToSize(articleContent, maxWidth + 180);
     const lineHeight = doc.getTextDimensions('M').h; // Use 'M' as a dummy character
     for (let i = 0; i < articleLines.length; i++) {
       const remainingPageSpace = doc.internal.pageSize.height - y;
@@ -652,7 +620,7 @@ based on your provided responses.
         doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
         y = 40;
       }
-      if (articleLines[i].includes('Introduction:') || articleLines[i].includes('Understanding the ACSC and Essential 8:') ||articleLines[i].includes('Essential 8 Strategies in Layman\'s Terms:') || articleLines[i].includes('The Business Perspective:') || articleLines[i].includes('Positive Impacts of E8 Implementation:') || articleLines[i].includes('Seeking Assistance:') || articleLines[i].includes('Conclusion:') || articleLines[i].includes('The following is an assessment of your current maturity level') || articleLines[i].includes('based on your provided responses.')) {
+      if (articleLines[i].includes('Introduction:') || articleLines[i].includes('Understanding the ACSC and Essential 8:') ||articleLines[i].includes('Essential 8 Strategies in Layman\'s Terms:') || articleLines[i].includes('The Business Perspective:') || articleLines[i].includes('Positive Impacts of E8 Implementation:') || articleLines[i].includes('Seeking Assistance:') || articleLines[i].includes('The following is an assessment of your current maturity level') || articleLines[i].includes('based on your provided responses.')) {
         doc.setFont(fontType);
         doc.setFontSize(largerFontSize);
         doc.setTextColor(251, 205, 50);
