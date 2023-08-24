@@ -2,6 +2,8 @@ import React, { useState, useMemo, useEffect } from 'react';
 import './App.css';
 import Question from './Questions/Question';
 import jsPDF from 'jspdf';
+
+
 const App = () => {
   const questionnaire = useMemo(() => ({
     essential1: [
@@ -441,33 +443,59 @@ const App = () => {
     ],
   }), []);
 
+
+
+  const essentialNames = {
+    essential1: "Application Control",
+    essential2: "Patch Management",
+    essential3: "Application Control",
+    essential4: "Patch Management",
+    essential5: "Application Control",
+    essential6: "Patch Management",
+    essential7: "Application Control",
+    essential8: "Patch Management",
+  };
+  
   // const [completedEssentials, setCompletedEssentials] = useState([]);
   const [userResponses, setUserResponses] = useState({});
   const [currentEssential, setcurrentEssential] = useState(1);
   const [currentQuestion,setCurrentQuestion]=useState(0);
+  const [minMaturityLevels, setMinMaturityLevels] = useState({});
+
 
   const handleOptionChange = (selectedOption) => {
     // Find the current essential questions based on the current maturity level
     const currentEssentialQuestions = questionnaire[`essential${currentEssential}`];
-  
     // Update the user's answer for the current question
     const updatedQuestions = currentEssentialQuestions.map((question, index) =>
       index === currentQuestion
         ? { ...question, choosedOption: selectedOption }
         : question
     );
-  
     // Find the question text for the current question
     const currentQuestionKey = updatedQuestions[currentQuestion].question;
-  
     // Update the userResponses state with the integer value
     setUserResponses((prevResponses) => ({
       ...prevResponses,
       [currentQuestionKey]: selectedOption,
     }));
-  
     // Check if it's the last question of the current essential
     questionnaire[`essential${currentEssential}`][currentQuestion]["choosedOption"] = selectedOption;
+
+
+
+    setMinMaturityLevels((prevMinLevels) => ({
+      ...prevMinLevels,
+      [`essential${currentEssential}`]: Math.min(
+        selectedOption,
+        prevMinLevels[`essential${currentEssential}`] !== undefined
+          ? prevMinLevels[`essential${currentEssential}`]
+          : selectedOption
+      ),
+    }));
+
+
+    //conditions
     if(currentQuestion === currentEssentialQuestions.length - 1){
       setcurrentEssential((prevEssential) => prevEssential + 1);
       setCurrentQuestion(0);
@@ -487,15 +515,7 @@ const App = () => {
       }
     }
   };
-  // useEffect(() => {
-  //   // This will be triggered whenever currentQuestion or currentEssential changes.
-  //   console.log("called ",currentEssential,currentQuestion);
-  //   console.log(`essential${currentEssential}`);
-  //   console.log(questionnaire[`essential${currentEssential}`]);
-  //   console.log("User Responses:", userResponses);
-  // }, [currentEssential, currentQuestion]);
-  
-  // Dynamically get the current essential questions based on the current maturity level
+
   const currentEssentialQuestions = useMemo(
     () => questionnaire[`essential${currentEssential}`],
     [currentEssential, questionnaire]
@@ -504,8 +524,6 @@ const App = () => {
 
 
 
-
-  //pdf generation
 
   const isQuestionnaireCompleted = !currentEssentialQuestions;
   const generatePDFReport = () => {
@@ -705,6 +723,24 @@ based on your provided responses.
       {isQuestionnaireCompleted ? (
         <div>
           <h1>Congratulations! You have completed the assessment.</h1>
+          <table>
+          <thead>
+          <tr>
+            <th>Strategy #</th>
+            <th>Essential 8 Strategy </th>
+            <th>Maturity Level (as per your responses)</th>
+          </tr>
+          </thead>
+          <tbody>
+            {Object.keys(minMaturityLevels).map((essentialKey, index) => (
+            <tr key={essentialKey}>
+              <td>{index + 1}</td>
+              <td>{essentialNames[essentialKey]}</td>
+              <td>Level {minMaturityLevels[essentialKey]}</td>
+            </tr>
+            ))}
+          </tbody>
+          </table>
           <div>
             <h2>User Responses:</h2>
             {Object.keys(userResponses).map((question) => (

@@ -135,3 +135,47 @@ button:active {
     transform: rotate(360deg);
   }
 }
+
+
+
+
+/* Add this CSS for basic table styling */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+table {
+  border-collapse: collapse;
+  width: 60%; /* Adjust the width as needed */
+  margin-bottom: 20px;
+  text-align: center; 
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+th, td {
+  padding: 8px;
+  text-align: center; /* Center-align the text within cells */
+  border: 1px solid black;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+th {
+  background-color: #f2f2f2;
+}
