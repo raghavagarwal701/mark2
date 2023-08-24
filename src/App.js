@@ -570,13 +570,13 @@ const App = () => {
     //printing title
     const titleFont = 'bold Arial';
     const titleFontSize = 30;
-    const titleText = 'User Assessment Report';
+    // const titleText = 'User Assessment Report';
     doc.setFont(titleFont);
     doc.setFontSize(titleFontSize);
     // Set the font color to yellow (RGB: 255, 255, 0)
     doc.setTextColor(251, 205, 50);
-    const titleTextWidth = doc.getTextWidth(titleText);
-    const centerX = (doc.internal.pageSize.width - titleTextWidth) / 2;
+    // const titleTextWidth = doc.getTextWidth(titleText);
+    // const centerX = (doc.internal.pageSize.width - titleTextWidth) / 2;
     // doc.text(centerX, 20, titleText);
 
     //printing article
