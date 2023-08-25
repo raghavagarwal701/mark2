@@ -2,6 +2,8 @@ import React, { useState, useMemo, useEffect } from 'react';
 import './App.css';
 import Question from './Questions/Question';
 import jsPDF from 'jspdf';
+import 'jspdf-autotable';
+
 
 
 const App = () => {
@@ -538,11 +540,9 @@ const App = () => {
       marginTop: 10,
       marginBottom: 10,
     });
-  
+    let pageNumber = 3;
     const a4Width = 210; // Width of A4 in mm
     const a4Height = 297; // Height of A4 in mm
-
-    // Replace 'imagePath' with the actual path to your image
     const imagePath1 = '1-min.png';
     const imagePath2 = '2-min.png';
     const imagePath3 = '3-min.png';
@@ -553,13 +553,16 @@ const App = () => {
     const imageHeight = (a4Width * a4Height) / a4Width; // Maintain aspect ratio
     // Calculate the Y position to center the image vertically
     const imageY = (a4Height - imageHeight) / 2;
-
-    const logoWidth = 19.1; // Adjust as needed
-    const logoHeight = 8.9; // Adjust as needed
-
+    const logoWidth = 53.17; // Adjust as needed
+    const logoHeight = 23.82; // Adjust as needed
     const logoX = 10; // X-coordinate (in mm) for the left side margin
     const logoY = 10; // Y-coordinate (in mm) for the top margin
-
+    const addPageNumber = () => {
+      doc.setFontSize(10);
+      doc.setTextColor(255, 255, 255); // Set text color to black
+      doc.text(190, doc.internal.pageSize.height - 10, `Page ${pageNumber}`);
+      pageNumber++; // Increment page number for the next page
+    };
     // Add the image to the PDF
     doc.addImage(imagePath1, 'PNG', 0, imageY, imageWidth, imageHeight);
     doc.addPage();
@@ -567,6 +570,7 @@ const App = () => {
     doc.addPage();
     doc.addImage(bg, 'PNG', 0, imageY, imageWidth, imageHeight);
     doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
+    addPageNumber();
     //printing title
     const titleFont = 'bold Arial';
     const titleFontSize = 30;
@@ -580,31 +584,34 @@ const App = () => {
     // doc.text(centerX, 20, titleText);
 
     //printing article
-    let y = 40;
+    let y = 20 + logoHeight;;
     const maxWidth = doc.internal.pageSize.width - 35;
-    const articleContent = `
-Our Unique Proposition (USP): Cyber Ethos stands out with its practitioner-led approach and commitment to customers. Our USP revolves around three key pillars:
-
+    const articleContent = `Our Unique Proposition (USP):
+Cyber Ethos stands out with its practitioner-led approach and commitment to customers. Our USP revolves around three key pillars:
 1) Holistic Cybersecurity Strategies, providing comprehensive programs aligned with business objectives;
 2) Translating Complexity into Actionable Insights, making cybersecurity understandable and enabling informed risk decisions; and
 3) Empowering Cybersecurity Awareness and Education, bridging the knowledge gap within organizations.
 
-Services Offered: Our range of cybersecurity services includes managed services for proactive monitoring and incident response, advisory and consulting for tailored guidance, board-level expertise to align cybersecurity with business objectives, audits to identify gaps and compliance requirements, and vulnerability scanning with penetration testing to assess and improve your Cyber posture.
+Services Offered:
+Our range of cybersecurity services includes managed services for proactive monitoring and incident response, advisory and consulting for tailored guidance, board-level expertise to align cybersecurity with business objectives, audits to identify gaps and compliance requirements, and vulnerability scanning with penetration testing to assess and improve your Cyber posture.
 
-Conclusion: With Cyber Ethos, businesses gain unparalleled cybersecurity expertise, customized strategies, and holistic solutions. Safeguard your data, secure your future, and gain a competitive edge. Contact us today by visiting our website www.cyberethos.com.au and/or by calling 1800 CETHOS (1800-238-467) and embark on a journey towards fortified cybersecurity and lasting success.
-
-
+Introduction:
 In today's rapidly evolving digital landscape, the security of your organisation's sensitive information and critical assets is paramount. As we embark on this journey of cybersecurity exploration, we are excited to present to you an assessment of your Essential 8 maturity based on your responses to our questionnaire. Our analysis examines the key aspects that directly impact your cybersecurity posture based on your responses. It offers a clear and non-technical understanding of your organisation's current state of cybersecurity preparedness from an Essential 8 perspective. This report aims to empower your decision-making by providing you what Cyber Ethos believes is your current state, from your responses. We hope this will assist you in an informed decision making in fortifying your defences and ensuring a robust cybersecurity foundation.
-
 Thank you for entrusting us with this critical endeavour. We will reach out to you in the coming period to discuss your report and assisting you in safeguarding your digital future.
+
+Understanding the ACSC and Essential 8:
+The ACSC, a unit under the Australian Signals Directorate (ASD), plays a pivotal role in bolstering Australia's cybersecurity resilience. The E8 strategies are designed to provide essential guidance to businesses across various sectors. Contrary to common misconceptions, these strategies are not just for large corporations or government entities; they apply to businesses of all sizes, safeguarding their digital assets and sensitive data.
+
+Conclusion:
+With Cyber Ethos, businesses gain unparalleled cybersecurity expertise, customized strategies, and holistic solutions. Safeguard your data, secure your future, and gain a competitive edge. Contact us today by visiting our website www.cyberethos.com.au and/or by calling 1800 CETHOS (1800-238-467) and embark on a journey towards fortified cybersecurity and lasting success.
 The following is an assessment of your current maturity level
 based on your provided responses.
     `;
-    const normalFontSize = 16;
+    let normalFontSize = 13;
     const largerFontSize = 18;
     const fontType = 'helvetica';
-    const articleLines = doc.splitTextToSize(articleContent, maxWidth + 180);
-    const lineHeight = doc.getTextDimensions('M').h; // Use 'M' as a dummy character
+    const articleLines = doc.splitTextToSize(articleContent, 390);
+    let lineHeight = doc.getTextDimensions('M').h; // Use 'M' as a dummy character
     for (let i = 0; i < articleLines.length; i++) {
       const remainingPageSpace = doc.internal.pageSize.height - y;
       if (remainingPageSpace < lineHeight) {
@@ -612,21 +619,22 @@ based on your provided responses.
         doc.addPage();
         doc.addImage(bg, 'PNG', 0, imageY, imageWidth, imageHeight);
         doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
-        y = 40; // Reset y position for new page
+        addPageNumber();
+        y = 20 + logoHeight; // Reset y position for new page
       }
       if(articleLines[i].includes('The following is an assessment of your current maturity level')){
         doc.addPage();
         doc.addImage(bg, 'PNG', 0, imageY, imageWidth, imageHeight);
         doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
-        y = 40;
+        addPageNumber();
+        y = 20 + logoHeight;
       }
-      if (articleLines[i].includes('Introduction:') || articleLines[i].includes('Understanding the ACSC and Essential 8:') ||articleLines[i].includes('Essential 8 Strategies in Layman\'s Terms:') || articleLines[i].includes('The Business Perspective:') || articleLines[i].includes('Positive Impacts of E8 Implementation:') || articleLines[i].includes('Seeking Assistance:') || articleLines[i].includes('The following is an assessment of your current maturity level') || articleLines[i].includes('based on your provided responses.')) {
+      if (articleLines[i].includes('Introduction:') || articleLines[i].includes('Understanding the ACSC and Essential 8:') ||articleLines[i].includes('Our Unique Proposition (USP):') || articleLines[i].includes('Services Offered:') || articleLines[i].includes('Conclusion:') || articleLines[i].includes('Seeking Assistance:') || articleLines[i].includes('The following is an assessment of your current maturity level') || articleLines[i].includes('based on your provided responses.')) {
         doc.setFont(fontType);
         doc.setFontSize(largerFontSize);
         doc.setTextColor(251, 205, 50);
       } 
       else {
-        // Set the font color to white (RGB: 255, 255, 255)
         doc.setTextColor(255, 255, 255);
         doc.setFontSize(normalFontSize);
       }
@@ -634,13 +642,47 @@ based on your provided responses.
       y += lineHeight;
     }
 
+
+
+    const tableMarginTop = 10;
+    const tableStartPosition = y + 10 - tableMarginTop;
+    const tableElement = document.querySelector('table');
+    const tableStyles = {
+      theme: 'grid', // Use the grid theme for better visibility
+    headStyles: {
+      fillColor: [33, 31, 31], // Column headers background color (blue)
+      textColor: [255, 255, 255], // Column headers text color (white)
+      lineColor: [255, 255, 255], // Border color (white)
+    },
+    styles: {
+      fontSize: 10,
+      cellPadding: 2,
+      valign: 'middle',
+      halign: 'center',
+      fillColor: [33, 31, 31], // Table background color (black)
+      textColor: [255, 255, 255], // Text color (white)
+      lineColor: [255, 255, 255], // Border color (white)
+    },
+    };
+  
+    // Add the table to the PDF with formatting
+    doc.autoTable({ html: tableElement, startY: tableStartPosition, ...tableStyles });
+
+
+
+    doc.addPage();
+    doc.addImage(bg, 'PNG', 0, imageY, imageWidth, imageHeight);
+    doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
+    addPageNumber();
+
+    y = 20 + logoHeight;
     Object.entries(userResponses).forEach(([question, response]) => {
       const questionText = `Question: ${question}`;
       const responseText = `Maturity Level:  ${response}`;
       
       // Apply word wrapping to response text to prevent overflow
-      const lines = doc.splitTextToSize(responseText, maxWidth);
-      const liness = doc.splitTextToSize(questionText, maxWidth);
+      const lines = doc.splitTextToSize(responseText, maxWidth+15);
+      const liness = doc.splitTextToSize(questionText, maxWidth+15);
   
       // Calculate the height of the wrapped text
       const lineHeight = doc.getTextDimensions('M').h; // Use 'M' as a dummy character
@@ -652,14 +694,39 @@ based on your provided responses.
         doc.addPage(); // Add a new page if necessary
         doc.addImage(bg, 'PNG', 0, imageY, imageWidth, imageHeight);
         doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
+        addPageNumber();
         y = 20 + logoHeight; // Reset the vertical position for new page
       }
       doc.setTextColor(255, 255, 255);
-      doc.text(20, y, liness);
+      doc.text(14, y, liness);
       y += wrappedTextHeights;
-      doc.text(20, y + 7, lines);
+      doc.text(14, y + 7, lines);
       y += wrappedTextHeight + 20;
     });
+
+    normalFontSize = 9;
+    lineHeight = doc.getTextDimensions('M').h;
+    const disclaimerContent = `
+    
+    
+Disclaimer: The Essential 8 maturity report provided herewith by Cyber Ethos is based solely on the responses provided by the end user. While our utmost diligence and expertise have been exercised in the creation of this report, it is important to acknowledge that the accuracy and completeness of the findings are contingent upon the accuracy and completeness of the user's responses. As such, Cyber Ethos cannot be held liable for any actions, decisions, or outcomes that may arise from the reliance on this report until a comprehensive and further assessment, conducted by our team, has been undertaken to align the findings with the specific needs and nuances of your organisation's cybersecurity requirements. We strongly recommend engaging us in a more detailed evaluation by our experts to ensure an accurate and tailored cybersecurity maturity assessment.`;
+    const disclaimerLines = doc.splitTextToSize(disclaimerContent, 210);
+    for (let i = 0; i < disclaimerLines.length; i++) {
+      const remainingPageSpace = doc.internal.pageSize.height - y;
+      if (remainingPageSpace < lineHeight) {
+        doc.addPage();
+        doc.addImage(bg, 'PNG', 0, imageY, imageWidth, imageHeight);
+        doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
+        addPageNumber();
+        y = 20 + logoHeight; // Reset y position for new page
+      }
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(normalFontSize);
+      doc.text(14, y, disclaimerLines[i]);
+      y += lineHeight;
+    }
+
+
 
     doc.addPage();
     doc.addImage(imagePath2, 'PNG', 0, imageY, imageWidth, imageHeight);
@@ -710,8 +777,8 @@ based on your provided responses.
           </tbody>
           </table>
           <div>
-            <h2>User Responses:</h2>
-            {Object.keys(userResponses).map((question) => (
+            <h4>For complet assisment download the report:</h4>
+            {/* {Object.keys(userResponses).map((question) => (
               <div>
                 <strong>Question: </strong>{question}
                 <br />
@@ -719,7 +786,7 @@ based on your provided responses.
                 <br />
                 <br />
               </div>
-            ))}
+            ))} */}
             <button onClick={handleDownloadPDF}>Download PDF</button>
           </div>
         </div>
