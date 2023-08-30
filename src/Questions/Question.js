@@ -1,43 +1,51 @@
 import React from 'react';
-
+import classes from '../Questionnere/Questionnere.module.css';
 
 const Question = ({ question, onOptionChange }) => {
-    // const isLastQuestionOfEssential = question.maturityLevel !== 3; // Assuming maximum maturity level is 3
-    const handleNextQuestion=()=>{
-        var selectedOption = document.querySelector('input[name="options"]:checked');
-        if(selectedOption){
-            // console.log("this is the selected option");
-            // console.log(selectedOption.value);
+    const handleNextQuestion = () => {
+        var selectedOption = document.querySelector(`.${classes.opt} input[name="options"]:checked`);
+        if (selectedOption) {
             onOptionChange(selectedOption.value);
-            selectedOption.checked=false;
+            selectedOption.checked = false;
+        } else {
+            console.log("Select an option");
         }
-        else {
-            console.log("select a option");
-        }
-        
-    }
+    };
+
     return (
-    <div className="question-format" >
-    <h1 className="question">{question.question}</h1>
-    <form>
-    {question.options.map((option, index) => (
-        <div className='opt'>
-            <input
-                type="radio"
-                id={`option${index}`}
-                name="options"
-                value={option[1]}
-            />
-            <label htmlFor={`option${index}`}>{option[0]}</label>
-            <br />
+        <div className={`${classes['question-format']}`} style={{ backgroundColor: '#211F1F' }}>
+            <header className={classes.header}>
+                <div className={classes['logo-container']}>
+                    <img
+                        src="/Cyber Ethos Logo.png"
+                        alt="Cyber Ethos Logo"
+                        width={212.68}
+                        height={95.28}
+                        className={classes.logo}
+                    />
+                    <p className={classes['logo-text']}>Essential 8 Assessment</p>
+                </div>
+            </header>
+            <h3 className={classes.question} style={{ color: 'rgb(251, 205, 50)' }}>{question.question}</h3>
+            <form className={classes.form}>
+                {question.options.map((option, index) => (
+                    <div className={classes.opt} key={index}>
+                        <input
+                            type="radio"
+                            id={`option${index}`}
+                            name="options"
+                            value={option[1]}
+                        />
+                        <label htmlFor={`option${index}`} style={{ color: 'rgb(255, 255, 255)' }}>{option[0]}</label>
+                        <br />
+                    </div>
+                ))}
+            </form>
+            <button onClick={handleNextQuestion}>
+                Next
+            </button>
         </div>
-    ))}
-    </form>
-    <button onClick={handleNextQuestion}>
-        Next
-    </button>
-    </div>
-);
+    );
 };
 
 export default Question;

@@ -1,0 +1,62 @@
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    /* background-color: #f9f9f9; */
+    /* border: 5px solid #ccc; */
+    /* border-radius: 400px; */
+  }
+  .heading1{
+    text-align: center;
+    font-size: 3rem;
+  }
+  
+  /* label {
+    display: block;
+    margin-bottom: 800px;
+    color: #555;
+  } */
+  
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"] {
+    font: 1.1rem sans-serif;
+    width: 35rem;
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #b4b3b3;
+    border-radius: 0.35rem;
+    /* transition: border-color 0.5s ease; */
+  }
+
+  /* input[type="text"]:focus,
+  input[type="tel"]:focus,
+  input[type="email"]:focus {
+    border: 2px solid rgb(0, 0, 0);
+  } */
+  .input{
+    text-align: center;
+  }
+  input::placeholder {
+    font: 1.15rem sans-serif;
+    color: rgb(174, 174, 174);
+}
+  button[type="submit"] {
+    font-size: 1.7rem;
+    width: 8rem;
+    height: 3.5rem;
+    /* padding-bottom: 10px; */
+    margin-top: 0.5rem;
+    background-color: #26a42a;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    opacity: 0.4;
+}
+
+/* button[type="submit"]:hover {
+    opacity: 1;
+} */
