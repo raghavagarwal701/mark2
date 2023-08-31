@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import classes from "./Questionnere.module.css";
 import Question from "../Questions/Question";
 import jsPDF from "jspdf";
@@ -1612,7 +1613,8 @@ Disclaimer: The Essential 8 maturity report provided herewith by Cyber Ethos is 
     link.download = "user_report.pdf";
     link.click();
   };
-
+  
+  const navigate = useNavigate();
   useEffect(() => {
     if (isQuestionnaireCompleted) {
       // eslint-disable-next-line
@@ -1630,10 +1632,15 @@ Disclaimer: The Essential 8 maturity report provided herewith by Cyber Ethos is 
   });
 
   useEffect(() => {
-    // eslint-disable-next-line
     const newUpdatedData = props.userData;
     newUpdatedData["userResponses"] = userResponses;
     setUpdatedData(newUpdatedData);
+    // eslint-disable-next-line
+    // console.log(props.userData)
+    if(!(props.userData.name)){
+      navigate('/');
+    }
+    // eslint-disable-next-line
   }, [props.userData, userResponses]);
   return (
     <div className={classes.App}>
