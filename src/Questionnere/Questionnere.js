@@ -7,14 +7,14 @@ import jsPDF from "jspdf";
 import "jspdf-autotable";
 
 const Questionnere = (props) => {
-  //   console.log(props.userData);
   const [updatedData, setUpdatedData] = useState({});
   const questionnaire = useMemo(
     () => ({
       essential1: [
         {
+          name: "Essential One (Application Control) - Access Control:",
           question:
-            "Essential one :- Access Control: Is there a centralized system for managing user access rights and permissions to critical systems and data?",
+            'Is there a centralized system for managing user access rights and permissions to critical systems and data?',
           options: [
             [
               "Not Implemented: The organization has not implemented any centralized system for managing user access rights and permissions to critical systems and data.",
@@ -36,8 +36,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential One (Application Control) - Incident Response:",
           question:
-            "Essential one :- Incident Response: Is there a documented incident response plan that outlines the steps to be taken in the event of a cyber incident?",
+            "Is there a documented incident response plan that outlines the steps to be taken in the event of a cyber incident?",
           options: [
             [
               "Not Implemented: The organization does not have a documented incident response plan outlining the steps to be taken in the event of a cyber incident",
@@ -63,8 +64,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential One (Application Control) - Patch Management:",
           question:
-            "Essential one :- Patch Management: Are there procedures in place for regularly applying security patches to operating systems and software?",
+            "Are there procedures in place for regularly applying security patches to operating systems and software?",
           options: [
             [
               "Not Implemented: The organization does not have procedures in place for regularly applying security patches to operating systems and software.",
@@ -90,8 +92,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential One (Application Control) - Data Protection:",
           question:
-            "Essential one :- Data Protection: Is data encryption used to protect sensitive information stored on company devices or transmitted over networks?",
+            "Is data encryption used to protect sensitive information stored on company devices or transmitted over networks?",
           options: [
             [
               "Not Implemented: Data encryption is not used to protect sensitive information stored on company devices or transmitted over networks.",
@@ -119,8 +122,9 @@ const Questionnere = (props) => {
       ],
       essential2: [
         {
+          name: "Essential Two (Patch Applications) - Patch Applications: ",
           question:
-            "Essential Two :- Patch Applications: Is there a documented process for assessing software applications for security vulnerabilities and updates?",
+            "Is there a documented process for assessing software applications for security vulnerabilities and updates?",
           options: [
             [
               "Not Implemented: The organization does not have a documented process for assessing software applications for security vulnerabilities and updates.",
@@ -146,8 +150,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Two (Patch Applications) - Patch Testing:",
           question:
-            "Essential Two :- Patch Testing: Are non-critical patches tested for compatibility and stability before deployment?",
+            "Are non-critical patches tested for compatibility and stability before deployment?",
           options: [
             [
               "Not Implemented: The organization does not have a process for testing non-critical patches for compatibility and stability before deployment.",
@@ -173,8 +178,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Two (Patch Applications) - Emergency Patching:",
           question:
-            "Essential Two :- Emergency Patching: Is there a process for emergency patching to address critical security vulnerabilities?",
+            "Is there a process for emergency patching to address critical security vulnerabilities?",
           options: [
             [
               "Not Implemented: The organization does not have a process for emergency patching to address critical security vulnerabilities.",
@@ -200,8 +206,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Two (Patch Applications) - Patch Verification:",
           question:
-            "Essential Two :- Patch Verification: Are there procedures to monitor and verify the successful application of software patches across the organization",
+            "Are there procedures to monitor and verify the successful application of software patches across the organization",
           options: [
             [
               "Not Implemented: The organization does not have procedures to monitor and verify the successful application of software patches across the organization.",
@@ -229,8 +236,9 @@ const Questionnere = (props) => {
       ],
       essential3: [
         {
+          name: "Essential Three (Configure Microsoft Office Macro Settings) - Microsoft Office Macro Settings:",
           question:
-            "Essential Three :- Microsoft Office Macro Settings: Is there a documented policy or procedure for configuring Microsoft Office macro settings?",
+            "Is there a documented policy or procedure for configuring Microsoft Office macro settings?",
           options: [
             [
               "Not Documented: The organization does not have a documented policy or procedure for configuring Microsoft Office macro settings.",
@@ -256,8 +264,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Three (Configure Microsoft Office Macro Settings) - Blocking Macros:",
           question:
-            "Essential Three :- Blocking Macros: Are Microsoft Office macro settings not configured to block macros from the internet and external sources?",
+            "Are Microsoft Office macro settings not configured to block macros from the internet and external sources?",
           options: [
             [
               "Not Configured: Microsoft Office macro settings are not configured to block macros from the internet and external sources.",
@@ -283,8 +292,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Three (Configure Microsoft Office Macro Settings) - Evaluating Macros:",
           question:
-            "Essential Three :- Evaluating Macros: Is there no process to evaluate and enable macros from trusted sources on a case-by-case basis?",
+            "Is there no process to evaluate and enable macros from trusted sources on a case-by-case basis?",
           options: [
             [
               "Not Implemented: The organization does not have a process to evaluate and enable macros from trusted sources on a case-by-case basis.",
@@ -310,8 +320,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Three (Configure Microsoft Office Macro Settings) - Employee Education:",
           question:
-            "Essential Three :- Employee Education: Are employees not educated about the risks associated with enabling macros from unknown or untrusted sources?",
+            "Are employees not educated about the risks associated with enabling macros from unknown or untrusted sources?",
           options: [
             [
               "Not Educated: Employees are not educated about the risks associated with enabling macros from unknown or untrusted sources.",
@@ -337,8 +348,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Three (Configure Microsoft Office Macro Settings) - Macro Antivirus Scanning:",
           question:
-            "Essential Three :- Macro Antivirus Scanning: Is macro antivirus scanning not enabled to detect and block potentially malicious macros?",
+            "Is macro antivirus scanning not enabled to detect and block potentially malicious macros?",
           options: [
             [
               "Not Enabled: Macro antivirus scanning is not enabled to detect and block potentially malicious macros.",
@@ -366,8 +378,9 @@ const Questionnere = (props) => {
       ],
       essential4: [
         {
+          name: "Essential Four (User Application Hardening) - Security Features for User Applications:",
           question:
-            "Essential Four :- Security Features for User Applications: Are web browsers and email clients not configured with security features like pop-up blockers, script blocking, and secure browsing?",
+            "Are web browsers and email clients not configured with security features like pop-up blockers, script blocking, and secure browsing?",
           options: [
             [
               "Not Configured: Web browsers and email clients are not configured with security features like pop-up blockers, script blocking, and secure browsing.",
@@ -393,8 +406,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Four (User Application Hardening) - Security Training for Employees:",
           question:
-            "Essential Four :- Security Training for Employees: Are employees not regularly trained to identify and report suspicious emails, phishing attempts, and social engineering attacks?",
+            "Are employees not regularly trained to identify and report suspicious emails, phishing attempts, and social engineering attacks?",
           options: [
             [
               "Not Provided: Employees are not regularly trained to identify and report suspicious emails, phishing attempts, and social engineering attacks.",
@@ -420,8 +434,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Four (User Application Hardening) - Assessment of Security Settings:",
           question:
-            "Essential Four :- Assessment of Security Settings: Is there no process to assess and strengthen the security settings of user applications based on their specific needs and risk profiles?",
+            "Is there no process to assess and strengthen the security settings of user applications based on their specific needs and risk profiles?",
           options: [
             [
               "Not Implemented: There is no process to assess and strengthen the security settings of user applications based on their specific needs and risk profiles.",
@@ -447,8 +462,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Four (User Application Hardening) - Review and Update of Security Configurations:",
           question:
-            "Essential Four :- Review and Update of Security Configurations: Is there no effort to review and update security configurations to align with current threats and best practices?",
+            "Is there no effort to review and update security configurations to align with current threats and best practices?",
           options: [
             [
               "Not Performed: There is no effort to review and update security configurations to align with current threats and best practices.",
@@ -474,8 +490,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Four (User Application Hardening) - Timely Deployment of Software Updates:",
           question:
-            "Essential Four :- Timely Deployment of Software Updates: Are software updates and security patches for user applications not deployed in a timely manner?",
+            "Are software updates and security patches for user applications not deployed in a timely manner?",
           options: [
             [
               "Not Timely: Software updates and security patches for user applications are not deployed in a timely manner.",
@@ -503,8 +520,9 @@ const Questionnere = (props) => {
       ],
       essential5: [
         {
+          name: "Essential Five (Restrict Administrative Privileges) - Restrict Administrative Privileges:",
           question:
-            "Essential Five :- Restrict Administrative Privileges: Is there a documented policy or procedure for restricting administrative privileges?",
+            "Is there a documented policy or procedure for restricting administrative privileges?",
           options: [
             [
               "Not Documented: There is no documented policy or procedure for restricting administrative privileges.",
@@ -530,8 +548,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Five (Restrict Administrative Privileges) - Principle of Least Privilege:",
           question:
-            "Essential Five :- Principle of Least Privilege: Is the principle of least privilege not consistently applied to grant administrative access only when necessary for specific job roles?",
+            "Is the principle of least privilege not consistently applied to grant administrative access only when necessary for specific job roles?",
           options: [
             [
               "Not Applied: The principle of least privilege is not consistently applied, and administrative access may not be restricted to only necessary job roles.",
@@ -557,8 +576,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Five (Restrict Administrative Privileges) - Administrative Privilege Review:",
           question:
-            "Essential Five :- Administrative Privilege Review: Are administrative privileges not regularly reviewed and revoked for employees who no longer require them?",
+            "Are administrative privileges not regularly reviewed and revoked for employees who no longer require them?",
           options: [
             [
               "Not Reviewed: Administrative privileges are not regularly reviewed, and there may be employees who still retain unnecessary privileges even though they no longer require them.",
@@ -584,8 +604,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Five (Restrict Administrative Privileges) - Employee Awareness:",
           question:
-            "Essential Five :- Employee Awareness: Are employees not informed about the risks associated with administrative privileges and the measures to protect them?",
+            "Are employees not informed about the risks associated with administrative privileges and the measures to protect them?",
           options: [
             [
               "Not Informed: Employees are not informed about the risks associated with administrative privileges and the measures to protect them.",
@@ -611,8 +632,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Five (Restrict Administrative Privileges) - Monitoring and Auditing:",
           question:
-            "Essential Five :- Monitoring and Auditing: Is there no process to monitor and audit administrative actions to detect potential misuse or unauthorized access?",
+            "Is there no process to monitor and audit administrative actions to detect potential misuse or unauthorized access?",
           options: [
             [
               "Not Implemented: There is no process to monitor and audit administrative actions to detect potential misuse or unauthorized access.",
@@ -640,8 +662,9 @@ const Questionnere = (props) => {
       ],
       essential6: [
         {
+          name: "Essential Six (Patch Operating Systems) - Documented Process for Patching Operating Systems:",
           question:
-            "Essential Six :- Documented Process for Patching Operating Systems: Is there no documented process for testing and deploying operating system patches across the organization?",
+            "Is there no documented process for testing and deploying operating system patches across the organization?",
           options: [
             [
               "Not Documented: There is no documented process for testing and deploying operating system patches across the organization.",
@@ -667,8 +690,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Six (Patch Operating Systems) - Review Frequency of Operating System Patches:",
           question:
-            "Essential Six :- Review Frequency of Operating System Patches: Is there no established frequency for reviewing security updates and patches for operating systems on all devices?",
+            "Is there no established frequency for reviewing security updates and patches for operating systems on all devices?",
           options: [
             [
               "Not Established: There is no established frequency for reviewing security updates and patches for operating systems on all devices.",
@@ -694,8 +718,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Six (Patch Operating Systems) - Prioritization of Critical Security Patches:",
           question:
-            "Essential Six :- Prioritization of Critical Security Patches: Are critical security patches not prioritized and applied promptly to mitigate potential vulnerabilities?",
+            "Are critical security patches not prioritized and applied promptly to mitigate potential vulnerabilities?",
           options: [
             [
               "Not Prioritized: Critical security patches are not prioritized and applied promptly, leading to delays in mitigating potential vulnerabilities.",
@@ -721,8 +746,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Six (Patch Operating Systems) - Challenges with Patching on Different Devices:",
           question:
-            "Essential Six :- Challenges with Patching on Different Devices: Are there no specific challenges or considerations identified for patching on different types of devices?",
+            "Are there no specific challenges or considerations identified for patching on different types of devices?",
           options: [
             [
               "Not Identified: There are no specific challenges or considerations identified for patching on different types of devices.",
@@ -748,8 +774,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Six (Patch Operating Systems) - Measurement and Reporting of Patch Management Success:",
           question:
-            "Essential Six :- Measurement and Reporting of Patch Management Success: Is there no process in place to measure and report on the success of the patch management process?",
+            "Is there no process in place to measure and report on the success of the patch management process?",
           options: [
             [
               "Not Implemented: There is no process in place to measure and report on the success of the patch management process.",
@@ -777,8 +804,9 @@ const Questionnere = (props) => {
       ],
       essential7: [
         {
+          name: "Essential Seven (Multi-Factor Authentication) - Multi-factor Authentication (MFA) Implementation:",
           question:
-            "Essential Seven :- Multi-factor Authentication (MFA) Implementation: Is multi-factor authentication not implemented for accessing company systems, networks, and sensitive data?",
+            "Is multi-factor authentication not implemented for accessing company systems, networks, and sensitive data?",
           options: [
             [
               "Not Implemented: Multi-factor authentication (MFA) is not implemented for accessing company systems, networks, and sensitive data.",
@@ -804,8 +832,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Seven (Multi-Factor Authentication) - Employee Education:",
           question:
-            "Essential Seven :- Employee Education: Are employees not educated on the importance of using MFA and the risks associated with single-factor authentication?",
+            "Are employees not educated on the importance of using MFA and the risks associated with single-factor authentication?",
           options: [
             [
               "Not Implemented: Multi-factor authentication (MFA) is not implemented for accessing company systems, networks, and sensitive data.",
@@ -831,8 +860,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Seven (Multi-Factor Authentication) - Review Process:",
           question:
-            "Essential Seven :- Review Process: Is there no periodic review process for assessing and strengthening the implementation of MFA?",
+            "Is there no periodic review process for assessing and strengthening the implementation of MFA?",
           options: [
             [
               "Not Implemented: There is no periodic review process for assessing and strengthening the implementation of MFA.",
@@ -858,8 +888,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Seven (Multi-Factor Authentication) - Balancing Security and Convenience:",
           question:
-            "Essential Seven :- Balancing Security and Convenience: Is there no consideration given to balancing security and user convenience regarding MFA methods?",
+            "Is there no consideration given to balancing security and user convenience regarding MFA methods?",
           options: [
             [
               "Not Considered: There is no consideration given to balancing security and user convenience regarding MFA methods. Security and convenience are not balanced effectively.",
@@ -885,8 +916,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Seven (Multi-Factor Authentication) - Backup Plan:",
           question:
-            "Essential Seven :- Backup Plan: Is there no backup plan in case MFA methods (e.g., authenticator apps) become unavailable?",
+            "Is there no backup plan in case MFA methods (e.g., authenticator apps) become unavailable?",
           options: [
             [
               "No Backup Plan: There is no backup plan in case MFA methods (e.g., authenticator apps) become unavailable.",
@@ -914,8 +946,9 @@ const Questionnere = (props) => {
       ],
       essential8: [
         {
+          name: "Essential Eight (Regular Backups) - Regular Backups:",
           question:
-            "Essential Eight :- Regular Backups: Are critical company data and systems not regularly backed up to secure and isolated locations?",
+            "Are critical company data and systems not regularly backed up to secure and isolated locations?",
           options: [
             [
               "Not Implemented: Critical company data and systems are not regularly backed up to secure and isolated locations.",
@@ -941,8 +974,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Eight (Regular Backups) - Data Restoration Testing:",
           question:
-            "Essential Eight :- Data Restoration Testing: Is there no process for testing the restoration of data from backups to ensure data integrity?",
+            "Is there no process for testing the restoration of data from backups to ensure data integrity?",
           options: [
             [
               "Not Implemented: There is no process for testing the restoration of data from backups to ensure data integrity.",
@@ -968,8 +1002,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Eight (Regular Backups) - Employee Awareness:",
           question:
-            "Essential Eight :- Employee Awareness: Are employees not informed about the importance of backups and their role in the backup process?",
+            "Are employees not informed about the importance of backups and their role in the backup process?",
           options: [
             [
               "Not Informed: Employees are not informed about the importance of backups and their role in the backup process.",
@@ -995,8 +1030,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Eight (Regular Backups) - Backup Encryption:",
           question:
-            "Essential Eight :- Backup Encryption: Are backups not encrypted to protect sensitive data from unauthorized access?",
+            "Are backups not encrypted to protect sensitive data from unauthorized access?",
           options: [
             [
               "Not Encrypted: Backups are not encrypted, and sensitive data is not protected from unauthorized access.",
@@ -1022,8 +1058,9 @@ const Questionnere = (props) => {
           choosedOption: null,
         },
         {
+          name: "Essential Eight (Regular Backups) - Backup Testing:",
           question:
-            "Essential Eight :- Backup Testing: Are backups not regularly tested for recoverability and compliance with data retention policies?",
+            "Are backups not regularly tested for recoverability and compliance with data retention policies?",
           options: [
             [
               "Not Tested: Backups are not regularly tested for recoverability, and there is no assessment of compliance with data retention policies.",
@@ -1081,9 +1118,9 @@ const Questionnere = (props) => {
         "Patch Applications is a crucial cybersecurity practice outlined in the Australian Government's Essential Eight (Essential 8) framework. This essential focuses on the timely and systematic application of patches to address vulnerabilities present in operating systems and applications. By doing so, organizations can significantly reduce the risk of exploitation by malicious actors who often target unpatched software to gain unauthorized access or cause harm.",
       maturity0: {
         risks:
-          "As evaluated, your organization's current maturity level for Patch Applications is at Level 0. This assessment represents your organization's current capability in managing the application of patches to vulnerabilities in your environment. It's important to recognize that this assessment is not an endpoint but rather a stage in the journey toward bolstering your cybersecurity defenses:\n\nMaturity Level 0: No Patch Management\n•Current Maturity Level: No formal patch management process is established.\n•Risks:\n•High risk of unpatched vulnerabilities being exploited by cyber threats.\n•Lack of visibility into vulnerable systems, making it difficult to assess and mitigate security risks.",
+          "As evaluated, your organization's current maturity level for Patch Applications is at Level 0. This assessment represents your organization's current capability in managing the application of patches to vulnerabilities in your environment. It's important to recognize that this assessment is not an endpoint but rather a stage in the journey toward bolstering your cybersecurity defenses:\n\nMaturity Level 0: No Patch Management\n• Current Maturity Level: No formal patch management process is established.\nRisks:\n• High risk of unpatched vulnerabilities being exploited by cyber threats.\n• Lack of visibility into vulnerable systems, making it difficult to assess and mitigate security risks.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n• Establish a Formal Patch Management Process: Initiate a structured approach to managing patches by defining roles, responsibilities, and processes.\n•b. Prioritize Critical Vulnerabilities: Identify critical vulnerabilities with potential business impact and prioritize their patching.\n•c. Implement Automated Patch Deployment: Introduce automation to deploy patches for operating systems and common applications, reducing manual errors.",
+          "Maturity Level 0 to Maturity Level 1:\n• Establish a Formal Patch Management Process: Initiate a structured approach to managing patches by defining roles, responsibilities, and processes.\n• Prioritize Critical Vulnerabilities: Identify critical vulnerabilities with potential business impact and prioritize their patching.\n• Implement Automated Patch Deployment: Introduce automation to deploy patches for operating systems and common applications, reducing manual errors.",
       },
       maturity1: {
         risks:
@@ -1103,9 +1140,9 @@ const Questionnere = (props) => {
         "Configuring Microsoft Office Macro Settings is a critical cybersecurity practice defined in the Australian Government's Essential Eight (Essential 8) framework. This essential focuses on managing the execution of macros in Microsoft Office documents, thereby mitigating the risks associated with potentially malicious macros embedded in files. By implementing proper configuration, organizations can significantly reduce the likelihood of macro-based attacks, a common vector for malware delivery.",
       maturity0: {
         risks:
-          "Your organization's current maturity level for Configuring Microsoft Office Macro Settings is at Level 0. This assessment signifies your organization's present capability in managing macro execution within Microsoft Office documents. Recognize that this assessment is not the final destination but rather a progression towards fortifying your cybersecurity defenses:\n\nMaturity Level 0: Unconfigured Macro Settings\n•Current Maturity Level: Macro settings are not configured, allowing macros to run unchecked by default.\n\nRisks:\n•High risk of malicious macros executing in Microsoft Office documents, leading to potential malware infection.\n•Limited awareness among employees about the potential dangers of enabling macros.",
+          "Your organization's current maturity level for Configuring Microsoft Office Macro Settings is at Level 0. This assessment signifies your organization's present capability in managing macro execution within Microsoft Office documents. Recognize that this assessment is not the final destination but rather a progression towards fortifying your cybersecurity defenses:\n\nMaturity Level 0: Unconfigured Macro Settings\n• Current Maturity Level: Macro settings are not configured, allowing macros to run unchecked by default.\n\nRisks:\n• High risk of malicious macros executing in Microsoft Office documents, leading to potential malware infection.\n• Limited awareness among employees about the potential dangers of enabling macros.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n• Disable Macros by Default: Begin by configuring Microsoft Office to disable macros in documents by default.\n•b. Educate Employees: Raise awareness among employees about the dangers associated with enabling macros and how to make informed decisions.\n•c. Allow Macros for Trusted Documents: Only permit macros to run in documents that are digitally signed and deemed trustworthy.",
+          "Maturity Level 0 to Maturity Level 1:\n• Disable Macros by Default: Begin by configuring Microsoft Office to disable macros in documents by default.\n• Educate Employees: Raise awareness among employees about the dangers associated with enabling macros and how to make informed decisions.\n• Allow Macros for Trusted Documents: Only permit macros to run in documents that are digitally signed and deemed trustworthy.",
       },
       maturity1: {
         risks:
@@ -1125,21 +1162,21 @@ const Questionnere = (props) => {
         "User Application Hardening is a pivotal cybersecurity practice within the Australian Government's Essential Eight (Essential 8) framework. This essential emphasizes the importance of securing user applications to thwart potential cyber threats. By implementing user application hardening practices, organizations can bolster their defenses against attacks that target user-level vulnerabilities.",
       maturity0: {
         risks:
-          "Your organization's present maturity level for User Application Hardening is at Level 0. This assessment reflects your organization's current capability in enhancing the security of user applications. It's essential to recognize that this evaluation isn't the culmination of efforts, but rather a stage in the journey toward enhancing your cybersecurity posture:\n\nMaturity Level 0: Basic User Application Security\n•Current Maturity Level: Basic awareness is raised among users about safe application usage. However, no specific practices are in place to harden user applications.\n•Risks:\n•High risk of user-related vulnerabilities being exploited by cyber threats.\n•Limited understanding of the potential dangers related to insecure application usage.",
+          "Your organization's present maturity level for User Application Hardening is at Level 0. This assessment reflects your organization's current capability in enhancing the security of user applications. It's essential to recognize that this evaluation isn't the culmination of efforts, but rather a stage in the journey toward enhancing your cybersecurity posture:\n\nMaturity Level 0: Basic User Application Security\n• Current Maturity Level: Basic awareness is raised among users about safe application usage. However, no specific practices are in place to harden user applications.\nRisks:\n• High risk of user-related vulnerabilities being exploited by cyber threats.\n• Limited understanding of the potential dangers related to insecure application usage.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n•a. Educate Users: Raise awareness among users about safe application usage and download practices.\n•b. Strong Password Policies: Implement strong password policies for application accounts to minimize unauthorized access.\n•c. Monitor User Behavior: Continuously monitor user application behavior to detect anomalies or potential security breaches.",
+          "Maturity Level 0 to Maturity Level 1:\n• Educate Users: Raise awareness among users about safe application usage and download practices.\n• Strong Password Policies: Implement strong password policies for application accounts to minimize unauthorized access.\n• Monitor User Behavior: Continuously monitor user application behavior to detect anomalies or potential security breaches.",
       },
       maturity1: {
         risks:
-          "Your organization's present maturity level for User Application Hardening is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n- While user education is emphasized, users might still engage in risky application behavior, potentially exposing vulnerabilities.\n- Manual monitoring of user behavior might not effectively identify subtle signs of compromise.",
+          "Your organization's present maturity level for User Application Hardening is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n• While user education is emphasized, users might still engage in risky application behavior, potentially exposing vulnerabilities.\n• Manual monitoring of user behavior might not effectively identify subtle signs of compromise.",
         steps:
-          "Maturity Level 1 to Maturity Level 2:\n\n- Multi-Factor Authentication: Enforce multi-factor authentication for critical applications to enhance user authentication security.\n- Application-Level Encryption: Implement encryption mechanisms to protect sensitive data stored within applications.\n- Regular Updates and Patches: Ensure that applications are regularly updated and patched to address security vulnerabilities.",
+          "Maturity Level 1 to Maturity Level 2:\n\n• Multi-Factor Authentication: Enforce multi-factor authentication for critical applications to enhance user authentication security.\n• Application-Level Encryption: Implement encryption mechanisms to protect sensitive data stored within applications.\n• Regular Updates and Patches: Ensure that applications are regularly updated and patched to address security vulnerabilities.",
       },
       maturity2: {
         risks:
-          "Your organization's present maturity level for User Application Hardening is at Level 2. This level reflects an improved capability in managing user application security compared to Level 1. However, certain risks persist and should be addressed:\n\n- Despite multi-factor authentication, sophisticated attacks could still exploit vulnerabilities in applications.\n- A lack of automated update mechanisms might lead to delays in applying crucial security patches.",
+          "Your organization's present maturity level for User Application Hardening is at Level 2. This level reflects an improved capability in managing user application security compared to Level 1. However, certain risks persist and should be addressed:\n\n• Despite multi-factor authentication, sophisticated attacks could still exploit vulnerabilities in applications.\n• A lack of automated update mechanisms might lead to delays in applying crucial security patches.",
         steps:
-          "Maturity Level 2 to Maturity Level 3:\n\n- Application Whitelisting: Implement application whitelisting for critical systems to restrict unauthorized applications.\n- Continuous User Activity Monitoring: Continuously monitor user activity for signs of compromise or unusual behavior.\n- Security Awareness Training: Conduct regular security awareness training for employees to educate them about evolving threats and safe practices.",
+          "Maturity Level 2 to Maturity Level 3:\n\n• Application Whitelisting: Implement application whitelisting for critical systems to restrict unauthorized applications.\n• Continuous User Activity Monitoring: Continuously monitor user activity for signs of compromise or unusual behavior.\n• Security Awareness Training: Conduct regular security awareness training for employees to educate them about evolving threats and safe practices.",
       },
     },
     essential5: {
@@ -1147,21 +1184,21 @@ const Questionnere = (props) => {
         "Restricting Administrative Privileges is a pivotal cybersecurity practice within the Australian Government's Essential Eight (Essential 8) framework. This essential emphasizes the importance of limiting administrative access to critical systems and resources to mitigate potential insider threats and unauthorized access. By restricting administrative privileges, organizations can significantly reduce the attack surface and potential impact of security breaches.",
       maturity0: {
         risks:
-          "Your organization's current maturity level for Restricting Administrative Privileges is at Level 0. This assessment represents your organization's current capability in managing and controlling administrative access. It's essential to recognize that this evaluation isn't the endpoint but rather a stage in the journey toward enhancing your cybersecurity defenses:\n\nMaturity Level 0: Unrestricted Administrative Access\n•Current Maturity Level: Administrative access is unrestricted, without specific documentation or controls in place.\n•Risks:\n•High risk of unauthorized access and potential misuse of administrative privileges.\n•Limited visibility and accountability regarding administrative activities.",
+          "Your organization's current maturity level for Restricting Administrative Privileges is at Level 0. This assessment represents your organization's current capability in managing and controlling administrative access. It's essential to recognize that this evaluation isn't the endpoint but rather a stage in the journey toward enhancing your cybersecurity defenses:\n\nMaturity Level 0: Unrestricted Administrative Access\n• Current Maturity Level: Administrative access is unrestricted, without specific documentation or controls in place.\nRisks:\n• High risk of unauthorized access and potential misuse of administrative privileges.\n• Limited visibility and accountability regarding administrative activities.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n•a. Identify and Document Administrative Accounts: Create a comprehensive inventory of administrative accounts and their respective purposes.\n•b. Strong Password Policies: Enforce strong password policies for administrative accounts to minimize unauthorized access.\n•c. Separate Administrative and Standard User Accounts: Implement strict separation between administrative and standard user accounts.",
+          "Maturity Level 0 to Maturity Level 1:\n• Identify and Document Administrative Accounts: Create a comprehensive inventory of administrative accounts and their respective purposes.\n• Strong Password Policies: Enforce strong password policies for administrative accounts to minimize unauthorized access.\n• Separate Administrative and Standard User Accounts: Implement strict separation between administrative and standard user accounts.",
       },
       maturity1: {
         risks:
-          "Your organization's current maturity level for Restricting Administrative Privileges is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n- While administrative accounts are documented, unauthorized access might still occur if strong authentication controls are lacking.\n- Limited separation between administrative and standard user accounts could lead to potential misuse.",
+          "Your organization's current maturity level for Restricting Administrative Privileges is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n• While administrative accounts are documented, unauthorized access might still occur if strong authentication controls are lacking.\n• Limited separation between administrative and standard user accounts could lead to potential misuse.",
         steps:
-          "Maturity Level 1 to Maturity Level 2:\n\n- Just-in-Time (JIT) Administration: Implement JIT administration to provide elevated privileges only when necessary.\n- Privilege Management Tools: Employ privilege management tools to enforce the principle of least privilege.\n- Monitor and Audit Administrative Access: Regularly monitor and audit administrative access and activities for anomalies or potential misuse.",
+          "Maturity Level 1 to Maturity Level 2:\n\n• Just-in-Time (JIT) Administration: Implement JIT administration to provide elevated privileges only when necessary.\n• Privilege Management Tools: Employ privilege management tools to enforce the principle of least privilege.\n• Monitor and Audit Administrative Access: Regularly monitor and audit administrative access and activities for anomalies or potential misuse.",
       },
       maturity2: {
         risks:
-          "Your organization's current maturity level for Restricting Administrative Privileges is at Level 2. This level reflects an improved capability in managing administrative access compared to Level 1. However, certain risks persist and should be addressed:\n\n- Despite JIT administration, potential delays in granting necessary privileges could impact operational efficiency.\n- Incomplete audit coverage might result in missed unauthorized activities.",
+          "Your organization's current maturity level for Restricting Administrative Privileges is at Level 2. This level reflects an improved capability in managing administrative access compared to Level 1. However, certain risks persist and should be addressed:\n\n• Despite JIT administration, potential delays in granting necessary privileges could impact operational efficiency.\n• Incomplete audit coverage might result in missed unauthorized activities.",
         steps:
-          "Maturity Level 2 to Maturity Level 3:\n\n- Privilege Escalation Detection and Response: Implement capabilities to detect and respond to privilege escalation attempts promptly.\n- Threat Hunting Techniques: Consider employing threat hunting techniques to proactively identify unauthorized access and suspicious activities.\n- Advanced Threat Detection for Lateral Movement: Enhance threat detection mechanisms to identify and respond to lateral movement within the network.",
+          "Maturity Level 2 to Maturity Level 3:\n\n• Privilege Escalation Detection and Response: Implement capabilities to detect and respond to privilege escalation attempts promptly.\n• Threat Hunting Techniques: Consider employing threat hunting techniques to proactively identify unauthorized access and suspicious activities.\n• Advanced Threat Detection for Lateral Movement: Enhance threat detection mechanisms to identify and respond to lateral movement within the network.",
       },
     },
     essential6: {
@@ -1169,21 +1206,21 @@ const Questionnere = (props) => {
         "Patch Operating Systems is a fundamental cybersecurity practice within the Australian Government's Essential Eight (Essential 8) framework. This essential focuses on maintaining the security and stability of operating systems by regularly applying patches to address vulnerabilities. By ensuring timely and comprehensive patching, organizations can significantly reduce the risk of exploitation by malicious actors targeting unpatched systems.",
       maturity0: {
         risks:
-          "Your organization's present maturity level for Patching Operating Systems is at Level 0. This assessment reflects your organization's current capability in managing and implementing patches for operating systems. Recognize that this evaluation isn't the culmination of efforts, but rather a stage in the journey toward enhancing your cybersecurity defenses:\n\nMaturity Level 0: Unpatched Operating Systems\n•Current Maturity Level: Operating systems are unpatched and lack a centralized patch management system.\n•Risks:\n•High risk of vulnerabilities in operating systems being exploited by cyber threats.\n•Limited visibility into vulnerable systems and potential risks.",
+          "Your organization's present maturity level for Patching Operating Systems is at Level 0. This assessment reflects your organization's current capability in managing and implementing patches for operating systems. Recognize that this evaluation isn't the culmination of efforts, but rather a stage in the journey toward enhancing your cybersecurity defenses:\n\nMaturity Level 0: Unpatched Operating Systems\n• Current Maturity Level: Operating systems are unpatched and lack a centralized patch management system.\nRisks:\n• High risk of vulnerabilities in operating systems being exploited by cyber threats.\n• Limited visibility into vulnerable systems and potential risks.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n•a. Centralized Patch Management System: Establish a centralized system to manage patches for operating systems.\n•b. Prioritize Patching: Prioritize patch deployment based on criticality and potential impact.\n•c. Regular System Scans: Regularly scan systems to identify and address missing patches.",
+          "Maturity Level 0 to Maturity Level 1:\n• Centralized Patch Management System: Establish a centralized system to manage patches for operating systems.\n• Prioritize Patching: Prioritize patch deployment based on criticality and potential impact.\n• Regular System Scans: Regularly scan systems to identify and address missing patches.",
       },
       maturity1: {
         risks:
-          "Your organization's present maturity level for Patching Operating Systems is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n- While patch management is initiated, a lack of automation might lead to delays in applying critical updates.\n- Limited segmentation of the network could result in potential vulnerabilities spreading to critical systems.",
+          "Your organization's present maturity level for Patching Operating Systems is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n• While patch management is initiated, a lack of automation might lead to delays in applying critical updates.\n• Limited segmentation of the network could result in potential vulnerabilities spreading to critical systems.",
         steps:
-          "Maturity Level 1 to Maturity Level 2:\n\n- Automated Patch Deployment: Implement automation for patch deployment and monitoring.\n- Network Segmentation: Consider segmenting the network to isolate critical systems for better control.\n- Timely Endpoint Patching: Extend timely patching efforts to cover all endpoints, including remote and mobile devices.",
+          "Maturity Level 1 to Maturity Level 2:\n\n• Automated Patch Deployment: Implement automation for patch deployment and monitoring.\n• Network Segmentation: Consider segmenting the network to isolate critical systems for better control.\n• Timely Endpoint Patching: Extend timely patching efforts to cover all endpoints, including remote and mobile devices.",
       },
       maturity2: {
         risks:
-          "Your organization's present maturity level for Patching Operating Systems is at Level 2. This level reflects an improved capability in managing operating system patches compared to Level 1. However, certain risks persist and should be addressed:\n\n- Automated patch deployment enhances efficiency, but unanticipated compatibility issues might arise.\n- A lack of focus on remote and mobile devices could lead to security gaps in those areas.",
+          "Your organization's present maturity level for Patching Operating Systems is at Level 2. This level reflects an improved capability in managing operating system patches compared to Level 1. However, certain risks persist and should be addressed:\n\n• Automated patch deployment enhances efficiency, but unanticipated compatibility issues might arise.\n• A lack of focus on remote and mobile devices could lead to security gaps in those areas.",
         steps:
-          "Maturity Level 2 to Maturity Level 3:\n\n- Continuous Monitoring: Implement continuous monitoring to proactively identify vulnerabilities and threats.\n- Threat Intelligence Utilization: Leverage threat intelligence to identify vulnerabilities relevant to your environment.\n- Rapid Response Plan: Establish a well-defined rapid response plan for addressing critical vulnerabilities while minimizing disruption.",
+          "Maturity Level 2 to Maturity Level 3:\n\n• Continuous Monitoring: Implement continuous monitoring to proactively identify vulnerabilities and threats.\n• Threat Intelligence Utilization: Leverage threat intelligence to identify vulnerabilities relevant to your environment.\n• Rapid Response Plan: Establish a well-defined rapid response plan for addressing critical vulnerabilities while minimizing disruption.",
       },
     },
     essential7: {
@@ -1191,27 +1228,21 @@ const Questionnere = (props) => {
         "Multi-factor Authentication (MFA) is a critical cybersecurity practice highlighted in the Australian Government's Essential Eight (Essential 8) framework. This essential focuses on enhancing the security of authentication by requiring users to provide multiple forms of verification. By implementing MFA, organizations can significantly reduce the risk of unauthorized access, even if passwords are compromised.",
       maturity0: {
         risks:
-          "Your organization's current maturity level for Multi-factor Authentication is at Level 0. This assessment reflects your organization's current capability in implementing and enforcing multi-factor authentication. It's important to understand that this evaluation isn't the final stage, but rather a phase in the journey toward fortifying your cybersecurity defenses:\n\nMaturity Level 0: No Multi-factor Authentication\n•Current Maturity Level: Multi-factor authentication is not implemented, and remote access relies solely on passwords.\n•Risks:\n•High risk of unauthorized access if passwords are compromised.\n•Limited protection against password-related attacks, such as brute force or phishing.",
+          "Your organization's current maturity level for Multi-factor Authentication is at Level 0. This assessment reflects your organization's current capability in implementing and enforcing multi-factor authentication. It's important to understand that this evaluation isn't the final stage, but rather a phase in the journey toward fortifying your cybersecurity defenses:\n\nMaturity Level 0: No Multi-factor Authentication\n• Current Maturity Level: Multi-factor authentication is not implemented, and remote access relies solely on passwords.\nRisks:\n• High risk of unauthorized access if passwords are compromised.\n• Limited protection against password-related attacks, such as brute force or phishing.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n•a. Implement MFA for Remote Access: Start by implementing multi-factor authentication for remote access.\n•b. User Education: Educate users about the importance of MFA and guide them on how to use it effectively.\n•c. Consider MFA for Critical Systems: Extend MFA consideration to critical systems and applications.",
+          "Maturity Level 0 to Maturity Level 1:\n• Implement MFA for Remote Access: Start by implementing multi-factor authentication for remote access.\n• User Education: Educate users about the importance of MFA and guide them on how to use it effectively.\n• Consider MFA for Critical Systems: Extend MFA consideration to critical systems and applications.",
       },
       maturity1: {
         risks:
-          "Your organization's current maturity level for Multi-factor Authentication is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n- While MFA is initiated, user awareness and the scope of MFA might be limited.\n- Critical systems without MFA remain vulnerable to unauthorized access.",
+          "Your organization's current maturity level for Multi-factor Authentication is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n• While MFA is initiated, user awareness and the scope of MFA might be limited.\n• Critical systems without MFA remain vulnerable to unauthorized access.",
         steps:
-          "Maturity Level 1 to Maturity Level 2:\n\n- Enforce MFA for Remote Access and Privileged Accounts: Enforce MFA for all remote access and accounts with privileged access.\n- SSO Integration: Integrate MFA with single sign-on (SSO) solutions to streamline user experience.\n- Regular MFA Policy Review: Regularly review and update MFA policies based on emerging threats and evolving technologies.",
+          "Maturity Level 1 to Maturity Level 2:\n\n• Enforce MFA for Remote Access and Privileged Accounts: Enforce MFA for all remote access and accounts with privileged access.\n• SSO Integration: Integrate MFA with single sign-on (SSO) solutions to streamline user experience.\n• Regular MFA Policy Review: Regularly review and update MFA policies based on emerging threats and evolving technologies.",
       },
       maturity2: {
         risks:
-          "Your organization's current maturity level for Multi-factor Authentication is at Level 2. This level reflects an improved capability in implementing MFA compared to Level 1. However, certain risks persist and should be addressed:\n\n- Even with widespread MFA, compromised or stolen devices might still enable unauthorized access.\n- Lack of timely policy updates could result in vulnerabilities due to evolving threats.",
+          "Your organization's current maturity level for Multi-factor Authentication is at Level 2. This level reflects an improved capability in implementing MFA compared to Level 1. However, certain risks persist and should be addressed:\n\n• Even with widespread MFA, compromised or stolen devices might still enable unauthorized access.\n• Lack of timely policy updates could result in vulnerabilities due to evolving threats.",
         steps:
-          "Maturity Level 2 to Maturity Level 3:\n\n- Adaptive Authentication: Implement adaptive authentication that assesses risk factors to determine the level of MFA required.\n- Monitor MFA Logs: Continuously monitor MFA logs for unusual activity or signs of compromise.\n- Biometric Authentication Consideration: Explore the possibility of using biometric authentication for heightened security, considering user privacy and technology feasibility.",
-      },
-      maturity3: {
-        risks:
-          "Your organization's current maturity level for Multi-factor Authentication is at Level 3. This signifies a significant advancement in your capability to implement and enforce MFA, but certain risks persist and require attention:\n\n- Adaptive authentication might introduce false positives or negatives if risk assessment isn't finely tuned.\n- Implementing biometric authentication requires careful consideration of user privacy and technology limitations.",
-        steps:
-          "Maturity Level 3 to Maturity Level 4:\n\n- Continuous Improvement: Establish a culture of continuous improvement in MFA practices.\n- Collaboration with Incident Response: Collaborate closely with incident response teams to ensure effective handling of MFA-related incidents.\n- User Privacy Considerations: Implement biometric authentication with due consideration for user privacy and legal requirements.",
+          "Maturity Level 2 to Maturity Level 3:\n\n• Adaptive Authentication: Implement adaptive authentication that assesses risk factors to determine the level of MFA required.\n• Monitor MFA Logs: Continuously monitor MFA logs for unusual activity or signs of compromise.\n• Biometric Authentication Consideration: Explore the possibility of using biometric authentication for heightened security, considering user privacy and technology feasibility.",
       },
     },
     essential8: {
@@ -1219,21 +1250,21 @@ const Questionnere = (props) => {
         "Regular Backups is a crucial cybersecurity practice within the Australian Government's Essential Eight (Essential 8) framework. This essential focuses on preserving the availability and integrity of critical data and systems through consistent backup processes. By implementing robust backup strategies, organizations can mitigate the impact of data loss due to cyber incidents, hardware failures, or other disasters.",
       maturity0: {
         risks:
-          "Your organization's current maturity level for Regular Backups is at Level 0. This assessment reflects your organization's current capability in managing and executing backup processes. It's important to understand that this evaluation isn't the final stage, but rather a phase in the journey toward enhancing your cybersecurity defenses:\n\nMaturity Level 0: No Regular Backups\n•Current Maturity Level: No regular backup processes are established for critical data and systems.\n•Risks:\n•High risk of data loss due to cyber incidents, hardware failures, or other disasters.\n•Limited ability to recover from incidents quickly and efficiently.",
+          "Your organization's current maturity level for Regular Backups is at Level 0. This assessment reflects your organization's current capability in managing and executing backup processes. It's important to understand that this evaluation isn't the final stage, but rather a phase in the journey toward enhancing your cybersecurity defenses:\n\nMaturity Level 0: No Regular Backups\n• Current Maturity Level: No regular backup processes are established for critical data and systems.\nRisks:\n• High risk of data loss due to cyber incidents, hardware failures, or other disasters.\n• Limited ability to recover from incidents quickly and efficiently.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n•a. Establish Backup Schedule: Start by establishing a regular backup schedule for critical data and systems.\n•b. Test Backup and Restore Processes: Regularly test backup and restore processes to ensure data integrity and reliability.\n•c. Secure Offsite Storage: Store backups in a secure offsite location to protect against on-site disasters.",
+          "Maturity Level 0 to Maturity Level 1:\n• Establish Backup Schedule: Start by establishing a regular backup schedule for critical data and systems.\n• Test Backup and Restore Processes: Regularly test backup and restore processes to ensure data integrity and reliability.\n• Secure Offsite Storage: Store backups in a secure offsite location to protect against on-site disasters.",
       },
       maturity1: {
         risks:
-          "Your organization's current maturity level for Regular Backups is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n- While basic backups are in place, untested restore processes might result in data corruption or loss.\n- Depending solely on offsite storage might lead to delays in data recovery.",
+          "Your organization's current maturity level for Regular Backups is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n• While basic backups are in place, untested restore processes might result in data corruption or loss.\n• Depending solely on offsite storage might lead to delays in data recovery.",
         steps:
-          "Maturity Level 1 to Maturity Level 2:\n\n- Automate Backup Process: Implement automation for backup processes to enhance consistency and reliability.\n- Encrypt Backup Data: Implement encryption for backup data to protect confidentiality during storage and transit.\n- Conduct Recovery Drills: Conduct periodic recovery drills to validate the restore process and identify potential issues.",
+          "Maturity Level 1 to Maturity Level 2:\n\n• Automate Backup Process: Implement automation for backup processes to enhance consistency and reliability.\n• Encrypt Backup Data: Implement encryption for backup data to protect confidentiality during storage and transit.\n• Conduct Recovery Drills: Conduct periodic recovery drills to validate the restore process and identify potential issues.",
       },
       maturity2: {
         risks:
-          "Your organization's current maturity level for Regular Backups is at Level 2. This level reflects an improved capability in backup management compared to Level 1. However, certain risks persist and should be addressed:\n\n- Automated backups enhance efficiency, but errors in the backup process could result in inconsistent or incomplete backups.\n- Encryption is effective, but key management and access controls are crucial to avoid unauthorized access.",
+          "Your organization's current maturity level for Regular Backups is at Level 2. This level reflects an improved capability in backup management compared to Level 1. However, certain risks persist and should be addressed:\n\n• Automated backups enhance efficiency, but errors in the backup process could result in inconsistent or incomplete backups.\n• Encryption is effective, but key management and access controls are crucial to avoid unauthorized access.",
         steps:
-          "Maturity Level 2 to Maturity Level 3:\n\n- Continuous Data Protection: Implement continuous data protection mechanisms for real-time backup to reduce data loss windows.\n- Cloud-Based Backup Solutions: Consider leveraging cloud-based backup solutions for scalability, flexibility, and potential cost savings.\n- Integrated Plans: Integrate backup and recovery plans with incident response procedures to streamline recovery efforts during cyber incidents.",
+          "Maturity Level 2 to Maturity Level 3:\n\n• Continuous Data Protection: Implement continuous data protection mechanisms for real-time backup to reduce data loss windows.\n• Cloud-Based Backup Solutions: Consider leveraging cloud-based backup solutions for scalability, flexibility, and potential cost savings.\n• Integrated Plans: Integrate backup and recovery plans with incident response procedures to streamline recovery efforts during cyber incidents.",
       },
     },
   };
@@ -1249,8 +1280,7 @@ const Questionnere = (props) => {
     essential8: "Regular Backups",
   };
 
-  // const [completedEssentials, setCompletedEssentials] = useState([]);
-  // eslint-disable-next-line
+
   const [userResponses, setUserResponses] = useState({});
   const [currentEssential, setcurrentEssential] = useState(1);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -1476,11 +1506,6 @@ based on your provided responses.
       startY: tableStartPosition,
       ...tableStyles,
     });
-    // doc.addPage();
-    // doc.addImage(bg, 'PNG', 0, imageY, imageWidth, imageHeight);
-    // doc.addImage(logo, 'PNG', logoX, logoY, logoWidth, logoHeight);
-    // addPageNumber();
-    // y = 20 + logoHeight;
 
     //report based on responce
     // Object.entries(userResponses).forEach(([question, response]) => {
@@ -1520,22 +1545,14 @@ based on your provided responses.
       let improvementSteps =
         essentialData[essentialKey][`maturity${maturityLevel}`]?.steps || "";
 
-      let essentialDescriptionbr = doc.splitTextToSize(
-        essentialDescription,
-        maxWidth + 15
-      );
+      let essentialDescriptionbr = doc.splitTextToSize(essentialDescription,maxWidth + 15);
       let essentialRisksbr = doc.splitTextToSize(essentialRisks, maxWidth + 15);
-      let improvementStepsbr = doc.splitTextToSize(
-        improvementSteps,
-        maxWidth + 15
-      );
+      let improvementStepsbr = doc.splitTextToSize(improvementSteps,maxWidth + 15);
       lineHeight = doc.getTextDimensions("M").h;
 
-      let essentialDescriptionLines =
-        essentialDescriptionbr.length * lineHeight;
+      let essentialDescriptionLines = essentialDescriptionbr.length * lineHeight;
       let essentialRisksLines = essentialRisksbr.length * lineHeight;
       let improvementStepsLines = improvementStepsbr.length * lineHeight;
-      // let totaltxtheight = essentialDescriptionLines + essentialRisksLines + improvementStepsLines;
 
       doc.addPage();
       doc.addImage(bg, "PNG", 0, imageY, imageWidth, imageHeight);
@@ -1574,17 +1591,13 @@ based on your provided responses.
       y += improvementStepsLines;
     });
 
-    // addPageNumber();
     normalFontSize = 9;
     lineHeight = doc.getTextDimensions("M").h;
     const disclaimerContent = `
 
 
 Disclaimer: The Essential 8 maturity report provided herewith by Cyber Ethos is based solely on the responses provided by the end user. While our utmost diligence and expertise have been exercised in the creation of this report, it is important to acknowledge that the accuracy and completeness of the findings are contingent upon the accuracy and completeness of the user's responses. As such, Cyber Ethos cannot be held liable for any actions, decisions, or outcomes that may arise from the reliance on this report until a comprehensive and further assessment, conducted by our team, has been undertaken to align the findings with the specific needs and nuances of your organisation's cybersecurity requirements. We strongly recommend engaging us in a more detailed evaluation by our experts to ensure an accurate and tailored cybersecurity maturity assessment.`;
-    const disclaimerLines = doc.splitTextToSize(
-      disclaimerContent,
-      maxWidth + 15
-    );
+    const disclaimerLines = doc.splitTextToSize(disclaimerContent,maxWidth + 86);
     for (let i = 0; i < disclaimerLines.length; i++) {
       const remainingPageSpace = doc.internal.pageSize.height - y;
       if (remainingPageSpace < lineHeight) {
@@ -1646,6 +1659,18 @@ Disclaimer: The Essential 8 maturity report provided herewith by Cyber Ethos is 
     <div className={classes.App}>
       {isQuestionnaireCompleted ? (
         <div style={{ backgroundColor: "#211F1F" }}>
+          <header className={classes.header}>
+                <div className={classes['logo-container']}>
+                    <img
+                        src="/Cyber Ethos Logo.png"
+                        alt="Cyber Ethos Logo"
+                        width={319.02}
+                        height={142.92}
+                        className={classes.logo}
+                    />
+                    <p className={classes['logo-text']}>Essential 8 Assessment</p>
+                </div>
+            </header>
           <h1 style={{ color: "rgb(251, 205, 50)" }}>
             Congratulations! You have completed the assessment.
           </h1>
@@ -1714,9 +1739,25 @@ Disclaimer: The Essential 8 maturity report provided herewith by Cyber Ethos is 
           </table>
           <div>
             <h4 style={{ color: "rgb(251, 205, 50)" }}>
-              For complet assisment download the report:
+              For complet assessment download the report:
             </h4>
             <button onClick={handleDownloadPDF}>Download PDF</button>
+          </div>
+          <div style={{ color: "rgb(251, 205, 50)", marginTop: "20px" }}>
+          </div>
+          <div style={{color: "rgb(251, 205, 50)"}} >
+            <p>
+              Phone: 1800 CEthos (1800 238 467) <br />
+              Email: <a href="mailto:info@cyberethos.com.au" style={{ color: "rgb(255, 255, 255)" }}>info@cyberethos.com.au</a> <br />
+              Facebook: <a href="https://www.fb.com/CyberEthos" style={{ color: "rgb(255, 255, 255)" }}>fb.com/CyberEthos</a> <br />
+              LinkedIn: <a href="https://www.linkedin.com/company/CyberEthos" style={{ color: "rgb(255, 255, 255)" }}>linkedin.com/company/CyberEthos</a>
+            </p>
+            <p style={{ margin: "0", fontSize: "1.2em" }}>
+              THANK YOU! WE LOOK FORWARD TO SERVING YOU.
+            </p>
+            <p className={classes['disclaimer-text']}>
+              Disclaimer: The Essential 8 maturity report provided herewith by Cyber Ethos is based solely on the responses provided by the end user. While our utmost diligence and expertise have been exercised in the creation of this report, it is important to acknowledge that the accuracy and completeness of the findings are contingent upon the accuracy and completeness of the user's responses. As such, Cyber Ethos cannot be held liable for any actions, decisions, or outcomes that may arise from the reliance on this report until a comprehensive and further assessment, conducted by our team, has been undertaken to align the findings with the specific needs and nuances of your organization's cybersecurity requirements. We strongly recommend engaging us in a more detailed evaluation by our experts to ensure an accurate and tailored cybersecurity maturity assessment.
+            </p>
           </div>
         </div>
       ) : (

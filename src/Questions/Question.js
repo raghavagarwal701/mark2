@@ -19,14 +19,15 @@ const Question = ({ question, onOptionChange }) => {
                     <img
                         src="/Cyber Ethos Logo.png"
                         alt="Cyber Ethos Logo"
-                        width={212.68}
-                        height={95.28}
+                        width={319.02}
+                        height={142.92}
                         className={classes.logo}
                     />
                     <p className={classes['logo-text']}>Essential 8 Assessment</p>
                 </div>
             </header>
-            <h3 className={classes.question} style={{ color: 'rgb(251, 205, 50)' }}>{question.question}</h3>
+            <h2 className={classes.questionhed} style={{ color: 'rgb(251, 205, 50)' }}>{question.name}</h2>
+            <h5 className={classes.question} style={{ color: 'rgb(251, 205, 50)' }}>{question.question}</h5>
             <form className={classes.form}>
                 {question.options.map((option, index) => (
                     <div className={classes.opt} key={index}>

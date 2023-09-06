@@ -2,13 +2,28 @@
     font-family:Arial, Helvetica, sans-serif;
     font-weight: 300;
     line-height: 3.5rem;
-    font-size: 2.3rem;
+    font-size: 1.6rem;
     padding-top: 0.5rem;
     padding-left: 4rem;
     padding-right: 4rem;
+    text-align: left;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
     color: rgb(251, 205, 50);
   }
-  
+  .questionhed {
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    line-height: 3.5rem;
+    font-size: 2.0rem;
+    padding-top: 0.5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    text-align: left;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    color: rgb(251, 205, 50);
+  }
   .header {
     display: flex;
     align-items: center;
@@ -18,7 +33,7 @@
   .logo-text {
     color: rgb(251, 205, 50);
     font-size: 3.5rem; /* Adjust as needed */
-    margin-left: 15rem;
+    margin-left: 9rem;
     display: flex;
     align-items: center;
     font-weight: 700;
@@ -165,15 +180,8 @@
       transform: rotate(360deg);
     }
   }
-  
-  
-  
-  
-  /* Add this CSS for basic table styling */
+
   .App {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     background-color: #211F1F;
   }
@@ -188,13 +196,14 @@
     margin-top: 4rem;
     margin-bottom: 3rem;
   }
-  
-  
-  
   table, th, td {
     border: 1px solid black;
   }
-  
+  .disclaimer-text{
+    padding-top: 1rem;
+    margin: 0px;
+    padding-bottom: 1rem;
+  }
   
   th, td {
     padding: 8px;
@@ -206,8 +215,74 @@
   }
   
   
-  
-  
-  
-  
-  
+  @media (max-width: 1150px) {
+    .questionhed {
+      font-size: 1.6rem;
+      line-height: 2.5rem;
+      padding-top: 0.5rem;
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
+    }
+    .question {
+      font-weight: 300;
+      line-height: 2rem;
+      font-size: 1.2rem;
+      padding-top: 0.5rem;
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
+      text-align: left;
+      margin-top: 0.2rem;
+      margin-bottom: 0.2rem;
+      color: rgb(251, 205, 50);
+    }
+    .logo-container {
+      margin-top: 0.5rem;
+      margin-left: 2rem;
+    }
+    .logo-container img {
+      width: 8rem;
+      height: auto;
+      margin-left: 2rem;
+    }
+    
+    .logo-text {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-left: 0rem;
+    }
+    .disclaimer-text{
+      font-size: 0.6rem;
+    }
+    .form {
+        padding: 0.5rem; /* Reduce padding for smaller screens */
+    }
+
+    .opt {
+        font-size: 0.8rem; /* Reduce font size for options */
+    }
+
+    label {
+        font-size: 0.8rem; /* Reduce font size for labels */
+    }
+
+    table {
+        width: 100%; /* Make the table full width on smaller screens */
+    }
+
+    th,
+    td {
+        padding: 4px; /* Reduce cell padding for smaller screens */
+    }
+
+
+    .logo-container {
+        margin-left: 0.3rem; /* Adjust the margin for logo container */
+    }
+
+    button {
+        margin-top: 0.5rem; /* Adjust button margin for smaller screens */
+        margin-bottom: 0.5rem; /* Adjust button margin for smaller screens */
+    }
+
+    /* You can add more styles as needed for better mobile responsiveness */
+}

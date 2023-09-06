@@ -14,21 +14,8 @@ const Essential8Form = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(userData);
     await props.updateData(userData);
-    // console.log(props.userData);
     navigate('/Questionnare');
-    // try {
-    //   const response = await axios.post('https://formbackend-as4m.onrender.com/form/add', userData);
-    //   console.log('POST: user is added', response.data);
-
-    //   // Redirect after successful submission
-    //   window.location.href = '';
-    // } catch (error) {
-    //   console.error(error);
-    // }
-
-    // Reset form fields
     setUserData({
       name: "",
       companyName: "",
