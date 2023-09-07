@@ -1,10 +1,12 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect} from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import classes from "./Questionnere.module.css";
 import Question from "../Questions/Question";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
+
+
 
 const Questionnere = (props) => {
   const [updatedData, setUpdatedData] = useState({});
@@ -1351,6 +1353,7 @@ const Questionnere = (props) => {
 
   const isQuestionnaireCompleted = !currentEssentialQuestions;
 
+
   const generatePDFReport = () => {
     const doc = new jsPDF({
       orientation: "portrait",
@@ -1428,7 +1431,7 @@ The ACSC, a unit under the Australian Signals Directorate (ASD), plays a pivotal
 Conclusion:
 With Cyber Ethos, businesses gain unparalleled cybersecurity expertise, customized strategies, and holistic solutions. Safeguard your data, secure your future, and gain a competitive edge. Contact us today by visiting our website www.cyberethos.com.au and/or by calling 1800 CETHOS (1800-238-467) and embark on a journey towards fortified cybersecurity and lasting success.
 The following is an assessment of your current maturity level
-based on your provided responses.
+based on your provided responses:
     `;
     let normalFontSize = 13;
     const largerFontSize = 18;
@@ -1466,7 +1469,7 @@ based on your provided responses.
         articleLines[i].includes(
           "The following is an assessment of your current maturity level"
         ) ||
-        articleLines[i].includes("based on your provided responses.")
+        articleLines[i].includes("based on your provided responses:")
       ) {
         doc.setFont(fontType);
         doc.setFontSize(largerFontSize);
@@ -1479,10 +1482,58 @@ based on your provided responses.
       y += lineHeight;
     }
 
+    doc.setFont(fontType);
+    doc.setFontSize(largerFontSize);
+    doc.setTextColor(251, 205, 50);
+    // Define the positions for user data
+    const userDataX = 17;
+    let userDataY = y + lineHeight - 5; // Adjust the vertical position as needed
+
+    // Add user data to the PDF
+    doc.setTextColor(251, 205, 50);
+    doc.text("Name:", userDataX, userDataY);
+    doc.setTextColor(255, 255, 255); 
+    // doc.setFontSize(normalFontSize);
+    doc.text(updatedData.name, userDataX + doc.getTextWidth("Name:") + 5, userDataY);
+    
+    userDataY += lineHeight + 3;
+    
+    doc.setFontSize(largerFontSize);
+    doc.setTextColor(251, 205, 50); 
+    doc.text("Company Name:", userDataX, userDataY);
+    
+    doc.setTextColor(255, 255, 255); // Set color for the user data (e.g., updatedData.companyName)
+    // doc.setFontSize(normalFontSize);
+    doc.text(updatedData.companyName, userDataX + doc.getTextWidth("Company Name:") + 5, userDataY);
+    
+    userDataY += lineHeight+ 3;
+    
+    doc.setFontSize(largerFontSize);
+    doc.setTextColor(251, 205, 50);
+    doc.text("Phone:", userDataX, userDataY);
+    
+    doc.setTextColor(255, 255, 255);
+    // doc.setFontSize(normalFontSize);
+    doc.text(updatedData.phoneNumber, userDataX + doc.getTextWidth("Phone:") + 5, userDataY);
+    
+    userDataY += lineHeight+ 3;
+    
+    doc.setFontSize(largerFontSize);
+    doc.setTextColor(251, 205, 50);
+    doc.text("Email: ", userDataX, userDataY);
+    doc.setTextColor(255, 255, 255);
+    // doc.setFontSize(normalFontSize);
+    doc.text(updatedData.email, userDataX + doc.getTextWidth("Email:")+ 5, userDataY);
+    
+
+
+    
+
     //adding table
     const tableMarginTop = 10;
-    const tableStartPosition = y + 10 - tableMarginTop;
+    const tableStartPosition = userDataY + 35 - tableMarginTop;
     const tableElement = document.querySelector("table");
+    // const tableHeight = doc.autoTable.previous.finalY + tableMarginTop;
     const tableStyles = {
       theme: "grid", // Use the grid theme for better visibility
       headStyles: {
@@ -1491,7 +1542,7 @@ based on your provided responses.
         lineColor: [255, 255, 255], // Border color (white)
       },
       styles: {
-        fontSize: 10,
+        fontSize: 13,
         cellPadding: 2,
         valign: "middle",
         halign: "center",
@@ -1506,6 +1557,7 @@ based on your provided responses.
       startY: tableStartPosition,
       ...tableStyles,
     });
+
 
     //report based on responce
     // Object.entries(userResponses).forEach(([question, response]) => {
@@ -1535,20 +1587,19 @@ based on your provided responses.
     //   doc.text(14, y + 7, lines);
     //   y += wrappedTextHeight + 20;
     // });
-
     Object.entries(minMaturityLevels).forEach(([essentialKey, response]) => {
-      // let essentialName = essentialNames[essentialKey] || 'Unknown Essential'; // Default to 'Unknown Essential' if name is not available
-      let maturityLevel = minMaturityLevels[essentialKey] || 0; // Default to 0 if maturity level is not available
+      let maturityLevel = minMaturityLevels[essentialKey] || 0; 
       let essentialDescription = essentialData[essentialKey]?.description || "";
-      let essentialRisks =
-        essentialData[essentialKey][`maturity${maturityLevel}`]?.risks || "";
-      let improvementSteps =
-        essentialData[essentialKey][`maturity${maturityLevel}`]?.steps || "";
-
+      let essentialRisks = essentialData[essentialKey][`maturity${maturityLevel}`]?.risks || "";
+      let improvementSteps = essentialData[essentialKey][`maturity${maturityLevel}`]?.steps || "";
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(normalFontSize);
+      lineHeight = doc.getTextDimensions("M").h;
+      console.log(maxWidth)
+      console.log(lineHeight)
       let essentialDescriptionbr = doc.splitTextToSize(essentialDescription,maxWidth + 15);
       let essentialRisksbr = doc.splitTextToSize(essentialRisks, maxWidth + 15);
       let improvementStepsbr = doc.splitTextToSize(improvementSteps,maxWidth + 15);
-      lineHeight = doc.getTextDimensions("M").h;
 
       let essentialDescriptionLines = essentialDescriptionbr.length * lineHeight;
       let essentialRisksLines = essentialRisksbr.length * lineHeight;
@@ -1655,6 +1706,7 @@ Disclaimer: The Essential 8 maturity report provided herewith by Cyber Ethos is 
     }
     // eslint-disable-next-line
   }, [props.userData, userResponses]);
+
   return (
     <div className={classes.App}>
       {isQuestionnaireCompleted ? (
@@ -1668,9 +1720,9 @@ Disclaimer: The Essential 8 maturity report provided herewith by Cyber Ethos is 
                         height={142.92}
                         className={classes.logo}
                     />
-                    <p className={classes['logo-text']}>Essential 8 Assessment</p>
                 </div>
             </header>
+                    <p className={classes['logo-text']}>Essential 8 Assessment</p>
           <h1 style={{ color: "rgb(251, 205, 50)" }}>
             Congratulations! You have completed the assessment.
           </h1>

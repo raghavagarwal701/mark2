@@ -23,9 +23,9 @@ const Question = ({ question, onOptionChange }) => {
                         height={142.92}
                         className={classes.logo}
                     />
-                    <p className={classes['logo-text']}>Essential 8 Assessment</p>
                 </div>
             </header>
+                    <p className={classes['logo-text']}>Essential 8 Assessment</p>
             <h2 className={classes.questionhed} style={{ color: 'rgb(251, 205, 50)' }}>{question.name}</h2>
             <h5 className={classes.question} style={{ color: 'rgb(251, 205, 50)' }}>{question.question}</h5>
             <form className={classes.form}>

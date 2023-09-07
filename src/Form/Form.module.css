@@ -1,23 +1,47 @@
 
+
+body {
+  background-color: #211F1F;
+}
 .container {
     max-width: 100%;
     margin: 0 auto;
     padding: 20px;
   }
+
+  .logo-text {
+    color: rgb(251, 205, 50);
+    font-size: 3.5rem; /* Adjust as needed */
+    text-align: center;
+    align-items: center;
+    font-weight: 700;
+    margin-top: 0rem;
+    margin-bottom: 3.5rem;
+  }
+  
+  .logo-container {
+    display: flex;
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+  }
+
   .heading1{
     text-align: center;
     font-size: 3rem;
+    color: rgb(251, 205, 50);
   }
   
   input[type="text"],
   input[type="tel"],
   input[type="email"] {
+    border: 1px solid white;
     font: 1.1rem sans-serif;
     width: 35rem;
     padding: 1.2rem;
     margin-bottom: 1.2rem;
-    border: 1px solid #b4b3b3;
     border-radius: 0.35rem;
+    background-color: transparent;
+    color: white;
     /* transition: border-color 0.5s ease; */
   }
 
@@ -47,11 +71,14 @@
     transition: 0.3s ease;
     opacity: 0.4;
 }
-
-/* button[type="submit"]:hover {
-    opacity: 1;
-} */
-@media (max-width: 768px) {
+.empty::after {
+  content: "\00a0"; /* Non-breaking space character */
+  display: block;
+  background-color: #211F1F; /* Set the background color */
+  color: white; /* Set text color to white */
+  padding: 20px; /* Add padding for spacing */
+}
+@media (max-width: 1150px) {
   /* Adjust styles for tablets and larger screens */
   input[type="text"],
   input[type="tel"],
@@ -64,4 +91,24 @@
   button[type="submit"] {
     width: 8rem; /* Restore the original width on larger screens */
   }
+
+  .logo-container {
+    margin-top: 0.5rem;
+    margin-left: 23%;
+  }
+  .logo-container img {
+    width: 8rem;
+    height: auto;
+    margin-left: 2rem;
+  }
+  
+  .logo-text {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-left: 0rem;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+  }
+
+
 }

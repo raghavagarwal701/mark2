@@ -39,8 +39,19 @@ const Essential8Form = (props) => {
     userData.email;
 
   return (
-    <div className={classes.container}>
-      <h1 className={classes.heading1}>Essential 8 Assessment</h1>
+    <div className={classes.container} >
+      <header className={classes.header}>
+                <div className={classes['logo-container']}>
+                    <img
+                        src="/Cyber Ethos Logo.png"
+                        alt="Cyber Ethos Logo"
+                        width={319.02}
+                        height={142.92}
+                        className={classes.logo}
+                    />
+                </div>
+        </header>
+        <p className={classes['logo-text']}>Essential 8 Assessment</p>
       <form className={classes.input} onSubmit={handleSubmit}>
         <input
           type="text"
@@ -92,6 +103,10 @@ const Essential8Form = (props) => {
           Start
         </button>
       </form>
+      <div className={`${classes.empty}`}>
+        {/* No additional content needed */}
+        
+    </div>
     </div>
   );
 };

@@ -33,23 +33,21 @@
   .logo-text {
     color: rgb(251, 205, 50);
     font-size: 3.5rem; /* Adjust as needed */
-    margin-left: 9rem;
-    display: flex;
+    text-align: center;
     align-items: center;
     font-weight: 700;
+    margin-top: 0rem;
+    margin-bottom: 3.5rem;
   }
   
   .logo-container {
     display: flex;
     align-items: center;
-  }
-  
-  .logo-container {
     text-align: center;
     margin-top: 0.5rem;
     margin-left: 2rem; /* Add this line to push the logo to the left */
   }
-  
+
   
   .form {
     display: flex;
@@ -237,7 +235,7 @@
     }
     .logo-container {
       margin-top: 0.5rem;
-      margin-left: 2rem;
+      margin-left: 23%;
     }
     .logo-container img {
       width: 8rem;
@@ -274,10 +272,6 @@
         padding: 4px; /* Reduce cell padding for smaller screens */
     }
 
-
-    .logo-container {
-        margin-left: 0.3rem; /* Adjust the margin for logo container */
-    }
 
     button {
         margin-top: 0.5rem; /* Adjust button margin for smaller screens */
