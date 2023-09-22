@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate,Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import classes from "./Form.module.css";
 
 
@@ -59,7 +59,10 @@ const Essential8Form = (props) => {
       email: "",
     });
   };
-
+  const handleTermsCondition=()=>{
+    // navigate('');
+    window.open('/terms-and-conditions','_blank')
+  }
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUserData((prevData) => ({
@@ -145,14 +148,12 @@ const Essential8Form = (props) => {
           />
           <p className={classes.checkboxText}>
             By clicking "Start," you agree to our{' '}
-            <Link
-              to="/terms-and-conditions"
+            <p
+              onClick={handleTermsCondition}
               className={classes.checkboxLink}
-              target="_blank" // Add this attribute
-              rel="noopener noreferrer" // Recommended for security
             >
               Terms and Conditions
-            </Link>
+            </p>
             .
           </p>
         </label>
