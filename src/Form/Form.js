@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import classes from "./Form.module.css";
 
 
@@ -145,14 +145,14 @@ const Essential8Form = (props) => {
           />
           <p className={classes.checkboxText}>
             By clicking "Start," you agree to our{' '}
-            <a
-              href="/terms-and-conditions"
+            <Link
+              to="/terms-and-conditions"
               className={classes.checkboxLink}
               target="_blank" // Add this attribute
               rel="noopener noreferrer" // Recommended for security
             >
               Terms and Conditions
-            </a>
+            </Link>
             .
           </p>
         </label>
