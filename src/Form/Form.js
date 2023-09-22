@@ -145,8 +145,8 @@ const Essential8Form = (props) => {
             onChange={handleCheckboxChange}
             className={classes.checkbox}
           />
-          <p className={classes.checkboxText}>
-            By clicking "Start," you agree to our{' '}
+          <div className={classes.checkboxText}>
+            By clicking "Start," you agree to our{' '} &nbsp;
             <p
               onClick={handleTermsCondition}
               className={classes.checkboxLink}
@@ -154,7 +154,7 @@ const Essential8Form = (props) => {
               Terms and Conditions
             </p>
             .
-          </p>
+          </div>
         </label>
         <br />
 
