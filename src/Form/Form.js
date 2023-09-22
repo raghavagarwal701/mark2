@@ -60,8 +60,7 @@ const Essential8Form = (props) => {
     });
   };
   const handleTermsCondition=()=>{
-    // navigate('');
-    window.open('/terms-and-conditions','_blank')
+    navigate('/terms-and-conditions');
   }
   const handleInputChange = (e) => {
     const { name, value } = e.target;
