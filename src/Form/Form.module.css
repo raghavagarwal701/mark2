@@ -15,7 +15,7 @@ body {
     text-align: center;
     align-items: center;
     font-weight: 700;
-    margin-top: 0rem;
+    margin-top: -1rem;
     margin-bottom: 3.5rem;
   }
   
@@ -30,6 +30,7 @@ body {
     font-size: 3rem;
     color: rgb(251, 205, 50);
   }
+
   
   input[type="text"],
   input[type="tel"],
@@ -78,6 +79,32 @@ body {
   color: white; /* Set text color to white */
   padding: 20px; /* Add padding for spacing */
 }
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  color: white;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.checkbox {
+  margin-right: 1rem;
+  margin-top: 0.4rem;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.checkboxLink {
+  color: rgba(251, 205, 50);
+  text-decoration: none;
+}
+
+
+
+
 @media (max-width: 1150px) {
   /* Adjust styles for tablets and larger screens */
   input[type="text"],

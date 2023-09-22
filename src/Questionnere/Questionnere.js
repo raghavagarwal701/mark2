@@ -268,7 +268,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Three (Configure Microsoft Office Macro Settings) - Blocking Macros:",
           question:
-            "Are Microsoft Office macro settings not configured to block macros from the internet and external sources?",
+            "Is Microsoft Office configured to block macros from the internet and external sources?",
           options: [
             [
               "Not Configured: Microsoft Office macro settings are not configured to block macros from the internet and external sources.",
@@ -296,7 +296,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Three (Configure Microsoft Office Macro Settings) - Evaluating Macros:",
           question:
-            "Is there no process to evaluate and enable macros from trusted sources on a case-by-case basis?",
+            "Is there a process to evaluate and enable macros from trusted sources on a case-by-case basis?",
           options: [
             [
               "Not Implemented: The organization does not have a process to evaluate and enable macros from trusted sources on a case-by-case basis.",
@@ -324,7 +324,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Three (Configure Microsoft Office Macro Settings) - Employee Education:",
           question:
-            "Are employees not educated about the risks associated with enabling macros from unknown or untrusted sources?",
+            "Have employees been educated about the risks associated with enabling macros from unknown or untrusted sources?",
           options: [
             [
               "Not Educated: Employees are not educated about the risks associated with enabling macros from unknown or untrusted sources.",
@@ -352,7 +352,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Three (Configure Microsoft Office Macro Settings) - Macro Antivirus Scanning:",
           question:
-            "Is macro antivirus scanning not enabled to detect and block potentially malicious macros?",
+            "Is macro antivirus scanning enabled to detect and block potentially malicious macros?",
           options: [
             [
               "Not Enabled: Macro antivirus scanning is not enabled to detect and block potentially malicious macros.",
@@ -382,7 +382,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Four (User Application Hardening) - Security Features for User Applications:",
           question:
-            "Are web browsers and email clients not configured with security features like pop-up blockers, script blocking, and secure browsing?",
+            "Are web browsers and email clients configured with security features like pop-up blockers, script blocking, and secure browsing?",
           options: [
             [
               "Not Configured: Web browsers and email clients are not configured with security features like pop-up blockers, script blocking, and secure browsing.",
@@ -410,7 +410,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Four (User Application Hardening) - Security Training for Employees:",
           question:
-            "Are employees not regularly trained to identify and report suspicious emails, phishing attempts, and social engineering attacks?",
+            "Are employees regularly trained to identify and report suspicious emails, phishing attempts, and social engineering attacks?",
           options: [
             [
               "Not Provided: Employees are not regularly trained to identify and report suspicious emails, phishing attempts, and social engineering attacks.",
@@ -438,7 +438,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Four (User Application Hardening) - Assessment of Security Settings:",
           question:
-            "Is there no process to assess and strengthen the security settings of user applications based on their specific needs and risk profiles?",
+            "Is there a process to assess and strengthen the security settings of user applications based on their specific needs and risk profiles?",
           options: [
             [
               "Not Implemented: There is no process to assess and strengthen the security settings of user applications based on their specific needs and risk profiles.",
@@ -466,7 +466,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Four (User Application Hardening) - Review and Update of Security Configurations:",
           question:
-            "Is there no effort to review and update security configurations to align with current threats and best practices?",
+            "Is there an effort to review and update security configurations to align with current threats and best practices?",
           options: [
             [
               "Not Performed: There is no effort to review and update security configurations to align with current threats and best practices.",
@@ -494,7 +494,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Four (User Application Hardening) - Timely Deployment of Software Updates:",
           question:
-            "Are software updates and security patches for user applications not deployed in a timely manner?",
+            "Are software updates and security patches for user applications deployed in a timely manner?",
           options: [
             [
               "Not Timely: Software updates and security patches for user applications are not deployed in a timely manner.",
@@ -552,7 +552,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Five (Restrict Administrative Privileges) - Principle of Least Privilege:",
           question:
-            "Is the principle of least privilege not consistently applied to grant administrative access only when necessary for specific job roles?",
+            "Is the principle of least privilege consistently applied to grant administrative access only when necessary for specific job roles?",
           options: [
             [
               "Not Applied: The principle of least privilege is not consistently applied, and administrative access may not be restricted to only necessary job roles.",
@@ -580,7 +580,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Five (Restrict Administrative Privileges) - Administrative Privilege Review:",
           question:
-            "Are administrative privileges not regularly reviewed and revoked for employees who no longer require them?",
+            "Are administrative privileges regularly reviewed and revoked for employees who no longer require them?",
           options: [
             [
               "Not Reviewed: Administrative privileges are not regularly reviewed, and there may be employees who still retain unnecessary privileges even though they no longer require them.",
@@ -608,7 +608,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Five (Restrict Administrative Privileges) - Employee Awareness:",
           question:
-            "Are employees not informed about the risks associated with administrative privileges and the measures to protect them?",
+            "Are employees informed about the risks associated with administrative privileges and the measures to protect them?",
           options: [
             [
               "Not Informed: Employees are not informed about the risks associated with administrative privileges and the measures to protect them.",
@@ -636,7 +636,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Five (Restrict Administrative Privileges) - Monitoring and Auditing:",
           question:
-            "Is there no process to monitor and audit administrative actions to detect potential misuse or unauthorized access?",
+            "Is there a process to monitor and audit administrative actions to detect potential misuse or unauthorized access?",
           options: [
             [
               "Not Implemented: There is no process to monitor and audit administrative actions to detect potential misuse or unauthorized access.",
@@ -666,7 +666,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Six (Patch Operating Systems) - Documented Process for Patching Operating Systems:",
           question:
-            "Is there no documented process for testing and deploying operating system patches across the organization?",
+            "Is there a documented process for testing and deploying operating system patches across the organization?",
           options: [
             [
               "Not Documented: There is no documented process for testing and deploying operating system patches across the organization.",
@@ -694,7 +694,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Six (Patch Operating Systems) - Review Frequency of Operating System Patches:",
           question:
-            "Is there no established frequency for reviewing security updates and patches for operating systems on all devices?",
+            "Is there an established frequency for reviewing security updates and patches for operating systems on all devices?",
           options: [
             [
               "Not Established: There is no established frequency for reviewing security updates and patches for operating systems on all devices.",
@@ -722,7 +722,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Six (Patch Operating Systems) - Prioritization of Critical Security Patches:",
           question:
-            "Are critical security patches not prioritized and applied promptly to mitigate potential vulnerabilities?",
+            "Are critical security patches prioritized and applied promptly to mitigate potential vulnerabilities?",
           options: [
             [
               "Not Prioritized: Critical security patches are not prioritized and applied promptly, leading to delays in mitigating potential vulnerabilities.",
@@ -750,7 +750,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Six (Patch Operating Systems) - Challenges with Patching on Different Devices:",
           question:
-            "Are there no specific challenges or considerations identified for patching on different types of devices?",
+            "Have specific challenges or considerations been identified for patching on different types of devices?",
           options: [
             [
               "Not Identified: There are no specific challenges or considerations identified for patching on different types of devices.",
@@ -778,7 +778,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Six (Patch Operating Systems) - Measurement and Reporting of Patch Management Success:",
           question:
-            "Is there no process in place to measure and report on the success of the patch management process?",
+            "Is there a process in place to measure and report on the success of the patch management process?",
           options: [
             [
               "Not Implemented: There is no process in place to measure and report on the success of the patch management process.",
@@ -808,7 +808,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Seven (Multi-Factor Authentication) - Multi-factor Authentication (MFA) Implementation:",
           question:
-            "Is multi-factor authentication not implemented for accessing company systems, networks, and sensitive data?",
+            "Is multi-factor authentication implemented for accessing company systems, networks, and sensitive data?",
           options: [
             [
               "Not Implemented: Multi-factor authentication (MFA) is not implemented for accessing company systems, networks, and sensitive data.",
@@ -836,7 +836,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Seven (Multi-Factor Authentication) - Employee Education:",
           question:
-            "Are employees not educated on the importance of using MFA and the risks associated with single-factor authentication?",
+            "Are employees educated on the importance of using MFA and the risks associated with single-factor authentication?",
           options: [
             [
               "Not Implemented: Multi-factor authentication (MFA) is not implemented for accessing company systems, networks, and sensitive data.",
@@ -864,7 +864,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Seven (Multi-Factor Authentication) - Review Process:",
           question:
-            "Is there no periodic review process for assessing and strengthening the implementation of MFA?",
+            "Is there a periodic review process for assessing and strengthening the implementation of MFA?",
           options: [
             [
               "Not Implemented: There is no periodic review process for assessing and strengthening the implementation of MFA.",
@@ -892,7 +892,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Seven (Multi-Factor Authentication) - Balancing Security and Convenience:",
           question:
-            "Is there no consideration given to balancing security and user convenience regarding MFA methods?",
+            "Is there consideration given to balancing security and user convenience regarding MFA methods?",
           options: [
             [
               "Not Considered: There is no consideration given to balancing security and user convenience regarding MFA methods. Security and convenience are not balanced effectively.",
@@ -920,7 +920,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Seven (Multi-Factor Authentication) - Backup Plan:",
           question:
-            "Is there no backup plan in case MFA methods (e.g., authenticator apps) become unavailable?",
+            "Is there a backup plan in case MFA methods (e.g., authenticator apps) become unavailable?",
           options: [
             [
               "No Backup Plan: There is no backup plan in case MFA methods (e.g., authenticator apps) become unavailable.",
@@ -950,7 +950,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Eight (Regular Backups) - Regular Backups:",
           question:
-            "Are critical company data and systems not regularly backed up to secure and isolated locations?",
+            "Are critical company data and systems regularly backed up to secure and isolated locations?",
           options: [
             [
               "Not Implemented: Critical company data and systems are not regularly backed up to secure and isolated locations.",
@@ -978,7 +978,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Eight (Regular Backups) - Data Restoration Testing:",
           question:
-            "Is there no process for testing the restoration of data from backups to ensure data integrity?",
+            "Is there a process for testing the restoration of data from backups to ensure data integrity?",
           options: [
             [
               "Not Implemented: There is no process for testing the restoration of data from backups to ensure data integrity.",
@@ -1006,7 +1006,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Eight (Regular Backups) - Employee Awareness:",
           question:
-            "Are employees not informed about the importance of backups and their role in the backup process?",
+            "Are employees informed about the importance of backups and their role in the backup process?",
           options: [
             [
               "Not Informed: Employees are not informed about the importance of backups and their role in the backup process.",
@@ -1034,7 +1034,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Eight (Regular Backups) - Backup Encryption:",
           question:
-            "Are backups not encrypted to protect sensitive data from unauthorized access?",
+            "Are backups encrypted to protect sensitive data from unauthorized access?",
           options: [
             [
               "Not Encrypted: Backups are not encrypted, and sensitive data is not protected from unauthorized access.",
@@ -1062,7 +1062,7 @@ const Questionnere = (props) => {
         {
           name: "Essential Eight (Regular Backups) - Backup Testing:",
           question:
-            "Are backups not regularly tested for recoverability and compliance with data retention policies?",
+            "Are backups regularly tested for recoverability and compliance with data retention policies?",
           options: [
             [
               "Not Tested: Backups are not regularly tested for recoverability, and there is no assessment of compliance with data retention policies.",
@@ -1589,6 +1589,7 @@ based on your provided responses:
     // });
     Object.entries(minMaturityLevels).forEach(([essentialKey, response]) => {
       let maturityLevel = minMaturityLevels[essentialKey] || 0; 
+      //let essentialName = essentialNames[essentialKey] || "";
       let essentialDescription = essentialData[essentialKey]?.description || "";
       let essentialRisks = essentialData[essentialKey][`maturity${maturityLevel}`]?.risks || "";
       let improvementSteps = essentialData[essentialKey][`maturity${maturityLevel}`]?.steps || "";
@@ -1614,7 +1615,7 @@ based on your provided responses:
       doc.setFont(fontType);
       doc.setFontSize(largerFontSize);
       doc.setTextColor(251, 205, 50);
-      doc.text("About the Essential:", 12, y);
+      doc.text(`About ${essentialNames[essentialKey]}:`, 12, y);
       y += lineHeight + 5;
       doc.setTextColor(255, 255, 255);
       doc.setFontSize(normalFontSize);
