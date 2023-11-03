@@ -1095,178 +1095,178 @@ const Questionnere = (props) => {
   const essentialData = {
     essential1: {
       description:
-        "Application Control is a fundamental cybersecurity practice outlined in the Australian Government's Essential Eight (Essential 8) framework. It aims to manage the execution of applications within an organization's environment, mitigating the risk of unauthorized or malicious software running on systems. The goal of Application Control is to establish control over what applications can run, ensuring that only trusted and necessary applications are allowed while preventing unauthorized and potentially harmful ones from executing.",
+        "Application Control is a fundamental cybersecurity practice outlined in the Australian Government's Essential Eight framework. It aims to manage the execution of applications within an organization's environment, mitigating the risk of unauthorized or malicious software running on systems. The goal of Application Control is to establish control over what applications can run, ensuring that only trusted and necessary applications are allowed while preventing unauthorized and potentially harmful ones from executing.",
       maturity0: {
         risks:
-          "Your organization's current maturity level for Application Control is at Level 0. This leve l represents the absence of measures to control the execution of applications:\n\n• High risk of unauthorized and potentially malicious applications running on systems.\n• Lack of visibility into application usage, making it difficult to manage security threats.",
+          "Your organization's current maturity level for Application Control is at Level 0. This level represents the absence of measures to control the execution of applications:\n\n1. High risk of unauthorized and potentially malicious applications running on systems.\n\n2. Lack of visibility into application usage, making it difficult to manage security threats.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n\n• Create an Inventory: Begin by thoroughly cataloging all applications operating within your environment. This inventory will serve as the foundation for your application control strategy.\n• Implement Default-Deny Rule: To build upon your inventory, put in place a default-deny rule that prevents any application from executing unless explicitly allowed. Create a whitelist of trusted applications that are essential for business operations.\n• Regular Audits: Conduct regular audits of your application whitelist to ensure it remains accurate and up to date. New applications should be carefully reviewed before adding them to the whitelist.",
+          "Maturity Level 0 to Maturity Level 1:\n\n1. Create an Inventory: Begin by thoroughly cataloging all applications operating within your environment. This inventory will serve as the foundation for your application control strategy.\n\n2. Implement Default-Deny Rule: To build upon your inventory, put in place a default-deny rule that prevents any application from executing unless explicitly allowed. Create a whitelist of trusted applications that are essential for business operations.\n\n3. Regular Audits: Conduct regular audits of your application whitelist to ensure it remains accurate and up to date. New applications should be carefully reviewed before adding them to the whitelist.",
       },
       maturity1: {
         risks:
-          "Your organization's current maturity level for Application Control is at Level 1, representing a basic capability:\n\n• Limited control over application execution, as unknown or unwhitelisted applications can still run.\n• Manual audits may be resource-intensive and might not effectively keep the whitelist up-to-date.",
+          "Your organization's current maturity level for Application Control is at Level 1, representing a basic capability:\n\n1. Limited control over application execution, as unknown or unwhitelisted applications can still run.\n\n2. Manual audits may be resource-intensive and might not effectively keep the whitelist up-to-date.",
         steps:
-          "Maturity Level 1 to Maturity Level 2:\n\n• Principle of Least Privilege: Enhance your application control policies by adopting the principle of least privilege. Review and adjust permissions and access rights for applications based on their required functionality.\n• Implement Application Sandboxing: Introduce application sandboxing for untrusted software. This isolation technique limits the impact of potentially risky applications by confining them to controlled environments.\n• Automate Whitelist Updates: Automate the process of updating your application whitelist. Implement mechanisms that track changes, validate new applications, and remove outdated ones without manual intervention.",
+          "Maturity Level 1 to Maturity Level 2:\n\n1. Principle of Least Privilege: Enhance your application control policies by adopting the principle of least privilege. Review and adjust permissions and access rights for applications based on their required functionality.\n\n2. Implement Application Sandboxing: Introduce application sandboxing for untrusted software. This isolation technique limits the impact of potentially risky applications by confining them to controlled environments.\n\n3. Automate Whitelist Updates: Automate the process of updating your application whitelist. Implement mechanisms that track changes, validate new applications, and remove outdated ones without manual intervention.",
       },
       maturity2: {
         risks:
-          "Your organization's current maturity level for Application Control is at Level 2, representing an intermediate capability:\n\n• While unauthorized applications are better controlled, risks still exist from sandbox breaches and potential vulnerabilities in whitelisted applications.\n• Without advanced threat detection, sophisticated attacks might bypass existing controls.",
+          "Your organization's current maturity level for Application Control is at Level 2, representing an intermediate capability:\n\n1. While unauthorized applications are better controlled, risks still exist from sandbox breaches and potential vulnerabilities in whitelisted applications.\n\n2. Without advanced threat detection, sophisticated attacks might bypass existing controls.",
         steps:
-          "Maturity Level 2 to Maturity Level 3:\n\n• Advanced Threat Detection: Implement advanced threat detection mechanisms to identify anomalous behavior exhibited by applications. Employ techniques such as behavioral analysis and machine learning to detect potential threats that might evade traditional controls.\n• Integrate with EDR System: Integrate your application control with your Endpoint Detection and Response (EDR) system. This synergy enhances your ability to correlate application behavior with endpoint activity and respond swiftly to emerging threats.\n• Continuous Monitoring and Updates: Maintain a proactive stance by continuously monitoring the threat landscape and updating your application control policies accordingly. Incorporate threat intelligence to stay ahead of emerging threats and vulnerabilities.",
+          "Maturity Level 2 to Maturity Level 3:\n\n1. Advanced Threat Detection: Implement advanced threat detection mechanisms to identify anomalous behavior exhibited by applications. Employ techniques such as behavioral analysis and machine learning to detect potential threats that might evade traditional controls.\n\n2. Integrate with EDR System: Integrate your application control with your Endpoint Detection and Response (EDR) system. This synergy enhances your ability to correlate application behavior with endpoint activity and respond swiftly to emerging threats.\n\n3. Continuous Monitoring and Updates: Maintain a proactive stance by continuously monitoring the threat landscape and updating your application control policies accordingly. Incorporate threat intelligence to stay ahead of emerging threats and vulnerabilities.",
       },
     },
     essential2: {
       description:
-        "Patch Applications is a crucial cybersecurity practice outlined in the Australian Government's Essential Eight (Essential 8) framework. This essential focuses on the timely and systematic application of patches to address vulnerabilities present in operating systems and applications. By doing so, organizations can significantly reduce the risk of exploitation by malicious actors who often target unpatched software to gain unauthorized access or cause harm.",
+        "Patch Applications is a crucial cybersecurity practice outlined in the Australian Government's Essential Eight framework. This essential focuses on the timely and systematic application of patches to address vulnerabilities present in operating systems and applications. By doing so, organizations can significantly reduce the risk of exploitation by malicious actors who often target unpatched software to gain unauthorized access or cause harm.",
       maturity0: {
         risks:
-          "As evaluated, your organization's current maturity level for Patch Applications is at Level 0. This assessment represents your organization's current capability in managing the application of patches to vulnerabilities in your environment. It's important to recognize that this assessment is not an endpoint but rather a stage in the journey toward bolstering your cybersecurity defenses:\n\nMaturity Level 0: No Patch Management\n• Current Maturity Level: No formal patch management process is established.\nRisks:\n• High risk of unpatched vulnerabilities being exploited by cyber threats.\n• Lack of visibility into vulnerable systems, making it difficult to assess and mitigate security risks.",
+          "Your organization's current maturity level for Patch Applications is at Level 0, representing No formal patch management process is established.\n\n1. High risk of unpatched vulnerabilities being exploited by cyber threats.\n\n2. Lack of visibility into vulnerable systems, making it difficult to assess and mitigate security risks.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n• Establish a Formal Patch Management Process: Initiate a structured approach to managing patches by defining roles, responsibilities, and processes.\n• Prioritize Critical Vulnerabilities: Identify critical vulnerabilities with potential business impact and prioritize their patching.\n• Implement Automated Patch Deployment: Introduce automation to deploy patches for operating systems and common applications, reducing manual errors.",
+          "Maturity Level 0 to Maturity Level 1:\n\n1. Establish a Formal Patch Management Process: Initiate a structured approach to managing patches by defining roles, responsibilities, and processes.\n\n2. Prioritize Critical Vulnerabilities: Identify critical vulnerabilities with potential business impact and prioritize their patching.\n\n3. Implement Automated Patch Deployment: Introduce automation to deploy patches for operating systems and common applications, reducing manual errors.",
       },
       maturity1: {
         risks:
-          "As evaluated, your organization's current maturity level for Patch Applications is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing.\n\n• Limited coverage of patch management; vulnerabilities in less critical applications may be overlooked.\n• Absence of a defined patch cycle could lead to inconsistent updates and exposure to emerging threats.",
+          "Your organization's current maturity level for Patch Applications is at Level 1, representing there are still vulnerabilities that need addressing.\n\n1. Limited coverage of patch management; vulnerabilities in less critical applications may be overlooked.\n\n2. Absence of a defined patch cycle could lead to inconsistent updates and exposure to emerging threats.",
         steps:
-          "Maturity Level 1 to Maturity Level 2:\n\n• Extend Patch Management to Wider Range: Expand your patch management process to cover a wider array of applications beyond operating systems.\n• Test Environment for Patch Validation: Set up a controlled environment to test patches before deploying them in the production environment.\n• Defined Patch Cycle: Create a clear schedule for patch deployment to ensure consistent updates.",
+          "Maturity Level 1 to Maturity Level 2:\n\n1. Extend Patch Management to Wider Range: Expand your patch management process to cover a wider array of applications beyond operating systems.\n\n2. Test Environment for Patch Validation: Set up a controlled environment to test patches before deploying them in the production environment.\n\n3. Defined Patch Cycle: Create a clear schedule for patch deployment to ensure consistent updates.",
       },
       maturity2: {
         risks:
-          "As evaluated, your organization's current maturity level for Patch Applications is at Level 2. This level reflects an improved capability in managing application execution and security compared to Level 1. However, certain risks persist and should be addressed.\n\n• Despite improved coverage, compatibility issues might arise during patch deployment, impacting system stability.\n• Manual assessment of vulnerabilities may still lead to slower response times for critical updates.",
+          "Your organization's current maturity level for Patch Applications is at Level 2, representing certain risks are persist and should be addressed.\n\n1. Despite improved coverage, compatibility issues might arise during patch deployment, impacting system stability.\n\n2. Manual assessment of vulnerabilities may still lead to slower response times for critical updates.",
         steps:
-          "Maturity Level 2 to Maturity Level 3:\n\n• Continuous Monitoring for Emerging Vulnerabilities: Establish mechanisms to continuously monitor for new vulnerabilities that could impact your environment.\n• Automate Vulnerability Scanning: Implement automation for vulnerability scanning and assessment to accelerate the identification of vulnerabilities.\n• Leverage Threat Intelligence: Incorporate threat intelligence to proactively identify vulnerabilities that might target your specific environment.",
+          "Maturity Level 2 to Maturity Level 3:\n\n1. Continuous Monitoring for Emerging Vulnerabilities: Establish mechanisms to continuously monitor for new vulnerabilities that could impact your environment.\n\n2. Automate Vulnerability Scanning: Implement automation for vulnerability scanning and assessment to accelerate the identification of vulnerabilities.\n\n3. Leverage Threat Intelligence: Incorporate threat intelligence to proactively identify vulnerabilities that might target your specific environment.",
       },
     },
     essential3: {
       description:
-        "Configuring Microsoft Office Macro Settings is a critical cybersecurity practice defined in the Australian Government's Essential Eight (Essential 8) framework. This essential focuses on managing the execution of macros in Microsoft Office documents, thereby mitigating the risks associated with potentially malicious macros embedded in files. By implementing proper configuration, organizations can significantly reduce the likelihood of macro-based attacks, a common vector for malware delivery.",
+        "Configuring Microsoft Office Macro Settings is a critical cybersecurity practice defined in the Australian Government's Essential Eight framework. This essential focuses on managing the execution of macros in Microsoft Office documents, thereby mitigating the risks associated with potentially malicious macros embedded in files. By implementing proper configuration, organizations can significantly reduce the likelihood of macro-based attacks, a common vector for malware delivery.",
       maturity0: {
         risks:
-          "Your organization's current maturity level for Configuring Microsoft Office Macro Settings is at Level 0. This assessment signifies your organization's present capability in managing macro execution within Microsoft Office documents. Recognize that this assessment is not the final destination but rather a progression towards fortifying your cybersecurity defenses:\n\nMaturity Level 0: Unconfigured Macro Settings\n• Current Maturity Level: Macro settings are not configured, allowing macros to run unchecked by default.\n\nRisks:\n• High risk of malicious macros executing in Microsoft Office documents, leading to potential malware infection.\n• Limited awareness among employees about the potential dangers of enabling macros.",
+          "Your organization's current maturity level for Configuring Microsoft Office Macro Settings is at Level 0, representing macro settings are not configured, allowing macros to run unchecked by default.\n\n1. High risk of malicious macros executing in Microsoft Office documents, leading to potential malware infection.\n\n2. Limited awareness among employees about the potential dangers of enabling macros.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n• Disable Macros by Default: Begin by configuring Microsoft Office to disable macros in documents by default.\n• Educate Employees: Raise awareness among employees about the dangers associated with enabling macros and how to make informed decisions.\n• Allow Macros for Trusted Documents: Only permit macros to run in documents that are digitally signed and deemed trustworthy.",
+          "Maturity Level 0 to Maturity Level 1:\n\n1. Disable Macros by Default: Begin by configuring Microsoft Office to disable macros in documents by default.\n\n2. Educate Employees: Raise awareness among employees about the dangers associated with enabling macros and how to make informed decisions.\n\n3. Allow Macros for Trusted Documents: Only permit macros to run in documents that are digitally signed and deemed trustworthy.",
       },
       maturity1: {
         risks:
-          "Your organization's current maturity level for Configuring Microsoft Office Macro Settings is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing.\n\n• Although macros are disabled by default, users might still enable them without full understanding, leading to inadvertent malware execution.\n• Limited enforcement mechanisms could result in unauthorized macro usage.",
+          "Your organization's current maturity level for Configuring Microsoft Office Macro Settings is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing.\n\n1. Although macros are disabled by default, users might still enable them without full understanding, leading to inadvertent malware execution.\n\n2. Limited enforcement mechanisms could result in unauthorized macro usage.",
         steps:
-          "Maturity Level 1 to Maturity Level 2:\n\n• Group Policy Enforcement: Implement group policies to consistently enforce macro settings organization-wide.\n• Regular Reviews and Updates: Continuously review and update macro settings based on evolving security best practices.",
+          "Maturity Level 1 to Maturity Level 2:\n\n1. Group Policy Enforcement: Implement group policies to consistently enforce macro settings organization-wide.\n\n2. Regular Reviews and Updates: Continuously review and update macro settings based on evolving security best practices.",
       },
       maturity2: {
         risks:
-          "Your organization's current maturity level for Configuring Microsoft Office Macro Settings is at Level 2. This level reflects an improved capability in managing macro execution and security compared to Level 1. However, certain risks persist and should be addressed.\n\n• Inconsistent enforcement across various groups might lead to gaps in macro settings.\n• A lack of proactive update mechanisms could result in outdated configurations.",
+          "Your organization's current maturity level for Configuring Microsoft Office Macro Settings is at Level 2. This level reflects an improved capability in managing macro execution and security compared to Level 1. However, certain risks persist and should be addressed.\n\n1. Inconsistent enforcement across various groups might lead to gaps in macro settings.\n\n2. A lack of proactive update mechanisms could result in outdated configurations.",
         steps:
-          "Maturity Level 2 to Maturity Level 3:\n\n• Advanced Email Filtering: Invest in advanced email filtering and inspection solutions to better identify malicious macros in inbound emails.\n• Application Control for Macros: Use application control to restrict macro execution to approved locations or trusted environments.\n• Employee Training: Provide training to employees on recognizing and reporting suspicious macro-enabled documents, enhancing the organization's human firewall.",
+          "Maturity Level 2 to Maturity Level 3:\n\n1. Advanced Email Filtering: Invest in advanced email filtering and inspection solutions to better identify malicious macros in inbound emails.\n\n2. Application Control for Macros: Use application control to restrict macro execution to approved locations or trusted environments.\n\n3. Employee Training: Provide training to employees on recognizing and reporting suspicious macro-enabled documents, enhancing the organization's human firewall.",
       },
     },
     essential4: {
       description:
-        "User Application Hardening is a pivotal cybersecurity practice within the Australian Government's Essential Eight (Essential 8) framework. This essential emphasizes the importance of securing user applications to thwart potential cyber threats. By implementing user application hardening practices, organizations can bolster their defenses against attacks that target user-level vulnerabilities.",
+        "User Application Hardening is a pivotal cybersecurity practice within the Australian Government's Essential Eight framework. This essential emphasizes the importance of securing user applications towards potential cyber threats. By implementing user application hardening practices, organizations can bolster their defenses against attacks that target user-level vulnerabilities.",
       maturity0: {
         risks:
-          "Your organization's present maturity level for User Application Hardening is at Level 0. This assessment reflects your organization's current capability in enhancing the security of user applications. It's essential to recognize that this evaluation isn't the culmination of efforts, but rather a stage in the journey toward enhancing your cybersecurity posture:\n\nMaturity Level 0: Basic User Application Security\n• Current Maturity Level: Basic awareness is raised among users about safe application usage. However, no specific practices are in place to harden user applications.\nRisks:\n• High risk of user-related vulnerabilities being exploited by cyber threats.\n• Limited understanding of the potential dangers related to insecure application usage.",
+          "Your organization's present maturity level for User Application Hardening is at Level 0, representing basic awareness is raised among users about safe application usage. However, no specific practices are in place to harden user applications.\n\n1. High risk of user-related vulnerabilities being exploited by cyber threats.\n\n2. Limited understanding of the potential dangers related to insecure application usage.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n• Educate Users: Raise awareness among users about safe application usage and download practices.\n• Strong Password Policies: Implement strong password policies for application accounts to minimize unauthorized access.\n• Monitor User Behavior: Continuously monitor user application behavior to detect anomalies or potential security breaches.",
+          "Maturity Level 0 to Maturity Level 1:\n\n1. Educate Users: Raise awareness among users about safe application usage and download practices.\n\n2. Strong Password Policies: Implement strong password policies for application accounts to minimize unauthorized access.\n\n3. Monitor User Behavior: Continuously monitor user application behavior to detect anomalies or potential security breaches.",
       },
       maturity1: {
         risks:
-          "Your organization's present maturity level for User Application Hardening is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n• While user education is emphasized, users might still engage in risky application behavior, potentially exposing vulnerabilities.\n• Manual monitoring of user behavior might not effectively identify subtle signs of compromise.",
+          "Your organization's present maturity level for User Application Hardening is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n1. While user education is emphasized, users might still engage in risky application behavior, potentially exposing vulnerabilities.\n\n2. Manual monitoring of user behavior might not effectively identify subtle signs of compromise.",
         steps:
-          "Maturity Level 1 to Maturity Level 2:\n\n• Multi-Factor Authentication: Enforce multi-factor authentication for critical applications to enhance user authentication security.\n• Application-Level Encryption: Implement encryption mechanisms to protect sensitive data stored within applications.\n• Regular Updates and Patches: Ensure that applications are regularly updated and patched to address security vulnerabilities.",
+          "Maturity Level 1 to Maturity Level 2:\n\n1. Multi-Factor Authentication: Enforce multi-factor authentication for critical applications to enhance user authentication security.\n\n2. Application-Level Encryption: Implement encryption mechanisms to protect sensitive data stored within applications.\n\n3. Regular Updates and Patches: Ensure that applications are regularly updated and patched to address security vulnerabilities.",
       },
       maturity2: {
         risks:
-          "Your organization's present maturity level for User Application Hardening is at Level 2. This level reflects an improved capability in managing user application security compared to Level 1. However, certain risks persist and should be addressed:\n\n• Despite multi-factor authentication, sophisticated attacks could still exploit vulnerabilities in applications.\n• A lack of automated update mechanisms might lead to delays in applying crucial security patches.",
+          "Your organization's present maturity level for User Application Hardening is at Level 2. This level reflects an improved capability in managing user application security compared to Level 1. However, certain risks persist and should be addressed:\n\n1. Despite multi-factor authentication, sophisticated attacks could still exploit vulnerabilities in applications.\n\n2. A lack of automated update mechanisms might lead to delays in applying crucial security patches.",
         steps:
-          "Maturity Level 2 to Maturity Level 3:\n\n• Application Whitelisting: Implement application whitelisting for critical systems to restrict unauthorized applications.\n• Continuous User Activity Monitoring: Continuously monitor user activity for signs of compromise or unusual behavior.\n• Security Awareness Training: Conduct regular security awareness training for employees to educate them about evolving threats and safe practices.",
+          "Maturity Level 2 to Maturity Level 3:\n\n1. Application Whitelisting: Implement application whitelisting for critical systems to restrict unauthorized applications.\n\n2. Continuous User Activity Monitoring: Continuously monitor user activity for signs of compromise or unusual behavior.\n\n3. Security Awareness Training: Conduct regular security awareness training for employees to educate them about evolving threats and safe practices.",
       },
     },
     essential5: {
       description:
-        "Restricting Administrative Privileges is a pivotal cybersecurity practice within the Australian Government's Essential Eight (Essential 8) framework. This essential emphasizes the importance of limiting administrative access to critical systems and resources to mitigate potential insider threats and unauthorized access. By restricting administrative privileges, organizations can significantly reduce the attack surface and potential impact of security breaches.",
+        "Restricting Administrative Privileges is a pivotal cybersecurity practice within the Australian Government's Essential Eight framework. This essential emphasizes the importance of limiting administrative access to critical systems and resources to mitigate potential insider threats and unauthorized access. By restricting administrative privileges, organizations can significantly reduce the attack surface and potential impact of security breaches.",
       maturity0: {
         risks:
-          "Your organization's current maturity level for Restricting Administrative Privileges is at Level 0. This assessment represents your organization's current capability in managing and controlling administrative access. It's essential to recognize that this evaluation isn't the endpoint but rather a stage in the journey toward enhancing your cybersecurity defenses:\n\nMaturity Level 0: Unrestricted Administrative Access\n• Current Maturity Level: Administrative access is unrestricted, without specific documentation or controls in place.\nRisks:\n• High risk of unauthorized access and potential misuse of administrative privileges.\n• Limited visibility and accountability regarding administrative activities.",
+          "Your organization's current maturity level for Restricting Administrative Privileges is at Level 0. This assessment represents your organization's current administrative access is unrestricted, without specific documentation or controls in place.\n\n1. High risk of unauthorized access and potential misuse of administrative privileges.\n\n2. Limited visibility and accountability regarding administrative activities.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n• Identify and Document Administrative Accounts: Create a comprehensive inventory of administrative accounts and their respective purposes.\n• Strong Password Policies: Enforce strong password policies for administrative accounts to minimize unauthorized access.\n• Separate Administrative and Standard User Accounts: Implement strict separation between administrative and standard user accounts.",
+          "Maturity Level 0 to Maturity Level 1:\n\n1. Identify and Document Administrative Accounts: Create a comprehensive inventory of administrative accounts and their respective purposes.\n\n2. Strong Password Policies: Enforce strong password policies for administrative accounts to minimize unauthorized access.\n\n3. Separate Administrative and Standard User Accounts: Implement strict separation between administrative and standard user accounts.",
       },
       maturity1: {
         risks:
-          "Your organization's current maturity level for Restricting Administrative Privileges is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n• While administrative accounts are documented, unauthorized access might still occur if strong authentication controls are lacking.\n• Limited separation between administrative and standard user accounts could lead to potential misuse.",
+          "Your organization's current maturity level for Restricting Administrative Privileges is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n1. While administrative accounts are documented, unauthorized access might still occur if strong authentication controls are lacking.\n\n2. Limited separation between administrative and standard user accounts could lead to potential misuse.",
         steps:
-          "Maturity Level 1 to Maturity Level 2:\n\n• Just-in-Time (JIT) Administration: Implement JIT administration to provide elevated privileges only when necessary.\n• Privilege Management Tools: Employ privilege management tools to enforce the principle of least privilege.\n• Monitor and Audit Administrative Access: Regularly monitor and audit administrative access and activities for anomalies or potential misuse.",
+          "Maturity Level 1 to Maturity Level 2:\n\n1. Just-in-Time (JIT) Administration: Implement JIT administration to provide elevated privileges only when necessary.\n\n2. Privilege Management Tools: Employ privilege management tools to enforce the principle of least privilege.\n\n3. Monitor and Audit Administrative Access: Regularly monitor and audit administrative access and activities for anomalies or potential misuse.",
       },
       maturity2: {
         risks:
-          "Your organization's current maturity level for Restricting Administrative Privileges is at Level 2. This level reflects an improved capability in managing administrative access compared to Level 1. However, certain risks persist and should be addressed:\n\n• Despite JIT administration, potential delays in granting necessary privileges could impact operational efficiency.\n• Incomplete audit coverage might result in missed unauthorized activities.",
+          "Your organization's current maturity level for Restricting Administrative Privileges is at Level 2. This level reflects an improved capability in managing administrative access compared to Level 1. However, certain risks persist and should be addressed:\n\n1. Despite Just-in-Time (JIT) administration, potential delays in granting necessary privileges could impact operational efficiency.\n\n2. Incomplete audit coverage might result in missed unauthorized activities.",
         steps:
-          "Maturity Level 2 to Maturity Level 3:\n\n• Privilege Escalation Detection and Response: Implement capabilities to detect and respond to privilege escalation attempts promptly.\n• Threat Hunting Techniques: Consider employing threat hunting techniques to proactively identify unauthorized access and suspicious activities.\n• Advanced Threat Detection for Lateral Movement: Enhance threat detection mechanisms to identify and respond to lateral movement within the network.",
+          "Maturity Level 2 to Maturity Level 3:\n\n1. Privilege Escalation Detection and Response: Implement capabilities to detect and respond to privilege escalation attempts promptly.\n\n2. Threat Hunting Techniques: Consider employing threat hunting techniques to proactively identify unauthorized access and suspicious activities.\n\n3. Advanced Threat Detection for Lateral Movement: Enhance threat detection mechanisms to identify and respond to lateral movement within the network.",
       },
     },
     essential6: {
       description:
-        "Patch Operating Systems is a fundamental cybersecurity practice within the Australian Government's Essential Eight (Essential 8) framework. This essential focuses on maintaining the security and stability of operating systems by regularly applying patches to address vulnerabilities. By ensuring timely and comprehensive patching, organizations can significantly reduce the risk of exploitation by malicious actors targeting unpatched systems.",
+        "Patch Operating Systems is a fundamental cybersecurity practice within the Australian Government's Essential Eight framework. This essential focuses on maintaining the security and stability of operating systems by regularly applying patches to address vulnerabilities. By ensuring timely and comprehensive patching, organizations can significantly reduce the risk of exploitation by malicious actors targeting unpatched systems.",
       maturity0: {
         risks:
-          "Your organization's present maturity level for Patching Operating Systems is at Level 0. This assessment reflects your organization's current capability in managing and implementing patches for operating systems. Recognize that this evaluation isn't the culmination of efforts, but rather a stage in the journey toward enhancing your cybersecurity defenses:\n\nMaturity Level 0: Unpatched Operating Systems\n• Current Maturity Level: Operating systems are unpatched and lack a centralized patch management system.\nRisks:\n• High risk of vulnerabilities in operating systems being exploited by cyber threats.\n• Limited visibility into vulnerable systems and potential risks.",
+          "Your organization's present maturity level for Patching Operating Systems is at Level 0. This assessment reflects high risk of vulnerabilities in operating systems being exploited by cyber threats.\n\n1. Limited visibility into vulnerable systems and potential risks.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n• Centralized Patch Management System: Establish a centralized system to manage patches for operating systems.\n• Prioritize Patching: Prioritize patch deployment based on criticality and potential impact.\n• Regular System Scans: Regularly scan systems to identify and address missing patches.",
+          "Maturity Level 0 to Maturity Level 1:\n\n1. Centralized Patch Management System: Establish a centralized system to manage patches for operating systems.\n\n2. Prioritize Patching: Prioritize patch deployment based on criticality and potential impact.\n\n3. Regular System Scans: Regularly scan systems to identify and address missing patches.",
       },
       maturity1: {
         risks:
-          "Your organization's present maturity level for Patching Operating Systems is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n• While patch management is initiated, a lack of automation might lead to delays in applying critical updates.\n• Limited segmentation of the network could result in potential vulnerabilities spreading to critical systems.",
+          "Your organization's present maturity level for Patching Operating Systems is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n1. While patch management is initiated, a lack of automation might lead to delays in applying critical updates.\n\n2. Limited segmentation of the network could result in potential vulnerabilities spreading to critical systems.",
         steps:
-          "Maturity Level 1 to Maturity Level 2:\n\n• Automated Patch Deployment: Implement automation for patch deployment and monitoring.\n• Network Segmentation: Consider segmenting the network to isolate critical systems for better control.\n• Timely Endpoint Patching: Extend timely patching efforts to cover all endpoints, including remote and mobile devices.",
+          "Maturity Level 1 to Maturity Level 2:\n\n1. Automated Patch Deployment: Implement automation for patch deployment and monitoring.\n\n2. Network Segmentation: Consider segmenting the network to isolate critical systems for better control.\n\n3. Timely Endpoint Patching: Extend timely patching efforts to cover all endpoints, including remote and mobile devices.",
       },
       maturity2: {
         risks:
-          "Your organization's present maturity level for Patching Operating Systems is at Level 2. This level reflects an improved capability in managing operating system patches compared to Level 1. However, certain risks persist and should be addressed:\n\n• Automated patch deployment enhances efficiency, but unanticipated compatibility issues might arise.\n• A lack of focus on remote and mobile devices could lead to security gaps in those areas.",
+          "Your organization's present maturity level for Patching Operating Systems is at Level 2. This level reflects an improved capability in managing operating system patches compared to Level 1. However, certain risks persist and should be addressed:\n\n1. Automated patch deployment enhances efficiency, but unanticipated compatibility issues might arise.\n\n2. A lack of focus on remote and mobile devices could lead to security gaps in those areas.",
         steps:
-          "Maturity Level 2 to Maturity Level 3:\n\n• Continuous Monitoring: Implement continuous monitoring to proactively identify vulnerabilities and threats.\n• Threat Intelligence Utilization: Leverage threat intelligence to identify vulnerabilities relevant to your environment.\n• Rapid Response Plan: Establish a well-defined rapid response plan for addressing critical vulnerabilities while minimizing disruption.",
+          "Maturity Level 2 to Maturity Level 3:\n\n1. Continuous Monitoring: Implement continuous monitoring to proactively identify vulnerabilities and threats.\n\n2. Threat Intelligence Utilization: Leverage threat intelligence to identify vulnerabilities relevant to your environment.\n\n3. Rapid Response Plan: Establish a well-defined rapid response plan for addressing critical vulnerabilities while minimizing disruption.",
       },
     },
     essential7: {
       description:
-        "Multi-factor Authentication (MFA) is a critical cybersecurity practice highlighted in the Australian Government's Essential Eight (Essential 8) framework. This essential focuses on enhancing the security of authentication by requiring users to provide multiple forms of verification. By implementing MFA, organizations can significantly reduce the risk of unauthorized access, even if passwords are compromised.",
+        "Multi-factor Authentication (MFA) is a critical cybersecurity practice highlighted in the Australian Government's Essential Eight framework. This essential focuses on enhancing the security of authentication by requiring users to provide multiple forms of verification. By implementing MFA, organizations can significantly reduce the risk of unauthorized access, even if passwords are compromised.",
       maturity0: {
         risks:
-          "Your organization's current maturity level for Multi-factor Authentication is at Level 0. This assessment reflects your organization's current capability in implementing and enforcing multi-factor authentication. It's important to understand that this evaluation isn't the final stage, but rather a phase in the journey toward fortifying your cybersecurity defenses:\n\nMaturity Level 0: No Multi-factor Authentication\n• Current Maturity Level: Multi-factor authentication is not implemented, and remote access relies solely on passwords.\nRisks:\n• High risk of unauthorized access if passwords are compromised.\n• Limited protection against password-related attacks, such as brute force or phishing.",
+          "Your organization's current maturity level for Multi-factor Authentication is at Level 0. This assessment reflects multi-factor authentication is not implemented, and remote access relies solely on passwords.\n\n1. High risk of unauthorized access if passwords are compromised.\n\n2. Limited protection against password-related attacks, such as brute force or phishing.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n• Implement MFA for Remote Access: Start by implementing multi-factor authentication for remote access.\n• User Education: Educate users about the importance of MFA and guide them on how to use it effectively.\n• Consider MFA for Critical Systems: Extend MFA consideration to critical systems and applications.",
+          "Maturity Level 0 to Maturity Level 1:\n\n1. Implement MFA for Remote Access: Start by implementing multi-factor authentication for remote access.\n\n2. User Education: Educate users about the importance of MFA and guide them on how to use it effectively.\n\n3. Consider MFA for Critical Systems: Extend MFA consideration to critical systems and applications.",
       },
       maturity1: {
         risks:
-          "Your organization's current maturity level for Multi-factor Authentication is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n• While MFA is initiated, user awareness and the scope of MFA might be limited.\n• Critical systems without MFA remain vulnerable to unauthorized access.",
+          "Your organization's current maturity level for Multi-factor Authentication is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n1. While MFA is initiated, user awareness and the scope of MFA might be limited.\n\n2. Critical systems without MFA remain vulnerable to unauthorized access.",
         steps:
-          "Maturity Level 1 to Maturity Level 2:\n\n• Enforce MFA for Remote Access and Privileged Accounts: Enforce MFA for all remote access and accounts with privileged access.\n• SSO Integration: Integrate MFA with single sign-on (SSO) solutions to streamline user experience.\n• Regular MFA Policy Review: Regularly review and update MFA policies based on emerging threats and evolving technologies.",
+          "Maturity Level 1 to Maturity Level 2:\n\n1. Enforce MFA for Remote Access and Privileged Accounts: Enforce MFA for all remote access and accounts with privileged access.\n\n2. SSO Integration: Integrate MFA with single sign-on (SSO) solutions to streamline user experience.\n\n3. Regular MFA Policy Review: Regularly review and update MFA policies based on emerging threats and evolving technologies.",
       },
       maturity2: {
         risks:
-          "Your organization's current maturity level for Multi-factor Authentication is at Level 2. This level reflects an improved capability in implementing MFA compared to Level 1. However, certain risks persist and should be addressed:\n\n• Even with widespread MFA, compromised or stolen devices might still enable unauthorized access.\n• Lack of timely policy updates could result in vulnerabilities due to evolving threats.",
+          "Your organization's current maturity level for Multi-factor Authentication is at Level 2. This level reflects an improved capability in implementing MFA compared to Level 1. However, certain risks persist and should be addressed:\n\n1. Even with widespread MFA, compromised or stolen devices might still enable unauthorized access.\n2. Lack of timely policy updates could result in vulnerabilities due to evolving threats.",
         steps:
-          "Maturity Level 2 to Maturity Level 3:\n\n• Adaptive Authentication: Implement adaptive authentication that assesses risk factors to determine the level of MFA required.\n• Monitor MFA Logs: Continuously monitor MFA logs for unusual activity or signs of compromise.\n• Biometric Authentication Consideration: Explore the possibility of using biometric authentication for heightened security, considering user privacy and technology feasibility.",
+          "Maturity Level 2 to Maturity Level 3:\n\n1. Adaptive Authentication: Implement adaptive authentication that assesses risk factors to determine the level of MFA required.\n\n2. Monitor MFA Logs: Continuously monitor MFA logs for unusual activity or signs of compromise.\n\n3. Biometric Authentication Consideration: Explore the possibility of using biometric authentication for heightened security, considering user privacy and technology feasibility.",
       },
     },
     essential8: {
       description:
-        "Regular Backups is a crucial cybersecurity practice within the Australian Government's Essential Eight (Essential 8) framework. This essential focuses on preserving the availability and integrity of critical data and systems through consistent backup processes. By implementing robust backup strategies, organizations can mitigate the impact of data loss due to cyber incidents, hardware failures, or other disasters.",
+        "Regular Backups is a crucial cybersecurity practice within the Australian Government's Essential Eight framework. This essential focuses on preserving the availability and integrity of critical data and systems through consistent backup processes. By implementing robust backup strategies, organizations can mitigate the impact of data loss due to cyber incidents, hardware failures, or other disasters.",
       maturity0: {
         risks:
-          "Your organization's current maturity level for Regular Backups is at Level 0. This assessment reflects your organization's current capability in managing and executing backup processes. It's important to understand that this evaluation isn't the final stage, but rather a phase in the journey toward enhancing your cybersecurity defenses:\n\nMaturity Level 0: No Regular Backups\n• Current Maturity Level: No regular backup processes are established for critical data and systems.\nRisks:\n• High risk of data loss due to cyber incidents, hardware failures, or other disasters.\n• Limited ability to recover from incidents quickly and efficiently.",
+          "Your organization's current maturity level for Regular Backups is at Level 0. This assessment reflects no regular backup processes are established for critical data and systems.\n\n1. High risk of data loss due to cyber incidents, hardware failures, or other disasters.\n\n2. Limited ability to recover from incidents quickly and efficiently.",
         steps:
-          "Maturity Level 0 to Maturity Level 1:\n• Establish Backup Schedule: Start by establishing a regular backup schedule for critical data and systems.\n• Test Backup and Restore Processes: Regularly test backup and restore processes to ensure data integrity and reliability.\n• Secure Offsite Storage: Store backups in a secure offsite location to protect against on-site disasters.",
+          "Maturity Level 0 to Maturity Level 1:\n\n1. Establish Backup Schedule: Start by establishing a regular backup schedule for critical data and systems.\n\n2. Test Backup and Restore Processes: Regularly test backup and restore processes to ensure data integrity and reliability.\n\n3. Secure Offsite Storage: Store backups in a secure offsite location to protect against on-site disasters.",
       },
       maturity1: {
         risks:
-          "Your organization's current maturity level for Regular Backups is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n• While basic backups are in place, untested restore processes might result in data corruption or loss.\n• Depending solely on offsite storage might lead to delays in data recovery.",
+          "Your organization's current maturity level for Regular Backups is at Level 1. This level represents an improved capability compared to Level 0, but there are still vulnerabilities that need addressing:\n\n1. While basic backups are in place, untested restore processes might result in data corruption or loss.\n\n2. Depending solely on offsite storage might lead to delays in data recovery.",
         steps:
-          "Maturity Level 1 to Maturity Level 2:\n\n• Automate Backup Process: Implement automation for backup processes to enhance consistency and reliability.\n• Encrypt Backup Data: Implement encryption for backup data to protect confidentiality during storage and transit.\n• Conduct Recovery Drills: Conduct periodic recovery drills to validate the restore process and identify potential issues.",
+          "Maturity Level 1 to Maturity Level 2:\n\n1. Automate Backup Process: Implement automation for backup processes to enhance consistency and reliability.\n\n2. Encrypt Backup Data: Implement encryption for backup data to protect confidentiality during storage and transit.\n\n3. Conduct Recovery Drills: Conduct periodic recovery drills to validate the restore process and identify potential issues.",
       },
       maturity2: {
         risks:
-          "Your organization's current maturity level for Regular Backups is at Level 2. This level reflects an improved capability in backup management compared to Level 1. However, certain risks persist and should be addressed:\n\n• Automated backups enhance efficiency, but errors in the backup process could result in inconsistent or incomplete backups.\n• Encryption is effective, but key management and access controls are crucial to avoid unauthorized access.",
+          "Your organization's current maturity level for Regular Backups is at Level 2. This level reflects an improved capability in backup management compared to Level 1. However, certain risks persist and should be addressed:\n\n1. Automated backups enhance efficiency, but errors in the backup process could result in inconsistent or incomplete backups.\n\n2. Encryption is effective, but key management and access controls are crucial to avoid unauthorized access.",
         steps:
-          "Maturity Level 2 to Maturity Level 3:\n\n• Continuous Data Protection: Implement continuous data protection mechanisms for real-time backup to reduce data loss windows.\n• Cloud-Based Backup Solutions: Consider leveraging cloud-based backup solutions for scalability, flexibility, and potential cost savings.\n• Integrated Plans: Integrate backup and recovery plans with incident response procedures to streamline recovery efforts during cyber incidents.",
+          "Maturity Level 2 to Maturity Level 3:\n\n1. Continuous Data Protection: Implement continuous data protection mechanisms for real-time backup to reduce data loss windows.\n\n2. Cloud-Based Backup Solutions: Consider leveraging cloud-based backup solutions for scalability, flexibility, and potential cost savings.\n\n3. Integrated Plans: Integrate backup and recovery plans with incident response procedures to streamline recovery efforts during cyber incidents.",
       },
     },
   };
@@ -1542,7 +1542,7 @@ based on your provided responses:
         lineColor: [255, 255, 255], // Border color (white)
       },
       styles: {
-        fontSize: 13,
+        fontSize: 12,
         cellPadding: 2,
         valign: "middle",
         halign: "center",
@@ -1596,8 +1596,8 @@ based on your provided responses:
       doc.setTextColor(255, 255, 255);
       doc.setFontSize(normalFontSize);
       lineHeight = doc.getTextDimensions("M").h;
-      console.log(maxWidth)
-      console.log(lineHeight)
+      // console.log(maxWidth)
+      // console.log(lineHeight)
       let essentialDescriptionbr = doc.splitTextToSize(essentialDescription,maxWidth + 15);
       let essentialRisksbr = doc.splitTextToSize(essentialRisks, maxWidth + 15);
       let improvementStepsbr = doc.splitTextToSize(improvementSteps,maxWidth + 15);
@@ -1615,7 +1615,7 @@ based on your provided responses:
       doc.setFont(fontType);
       doc.setFontSize(largerFontSize);
       doc.setTextColor(251, 205, 50);
-      doc.text(`About ${essentialNames[essentialKey]}:`, 12, y);
+      doc.text(`${essentialNames[essentialKey]}`, 12, y);
       y += lineHeight + 5;
       doc.setTextColor(255, 255, 255);
       doc.setFontSize(normalFontSize);
@@ -1625,7 +1625,7 @@ based on your provided responses:
       doc.setFont(fontType);
       doc.setFontSize(largerFontSize);
       doc.setTextColor(251, 205, 50);
-      doc.text("Current Maturity Level and Risks:", 12, y);
+      doc.text("Current Maturity Level and Risks", 12, y);
       y += lineHeight + 5;
       doc.setTextColor(255, 255, 255);
       doc.setFontSize(normalFontSize);
@@ -1635,14 +1635,14 @@ based on your provided responses:
       doc.setFont(fontType);
       doc.setFontSize(largerFontSize);
       doc.setTextColor(251, 205, 50);
-      doc.text("Next Steps to Improve Maturity Level:", 12, y);
+      doc.text("Next Steps to Improve", 12, y);
       y += lineHeight + 5;
       doc.setTextColor(255, 255, 255);
       doc.setFontSize(normalFontSize);
       doc.text(12, y, improvementStepsbr);
       y += improvementStepsLines;
     });
-
+    y += 5;
     normalFontSize = 9;
     lineHeight = doc.getTextDimensions("M").h;
     const disclaimerContent = `
