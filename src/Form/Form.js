@@ -93,7 +93,7 @@ const Essential8Form = (props) => {
           />
         </div>
       </header>
-      <p className={classes['logo-text']}>Essential 8 Assessment</p>
+      <p className={classes['logo-text']}>Cyber Security Assessment</p>
       <form className={classes.input} onSubmit={handleSubmit}>
         <input
           type="text"
@@ -134,6 +134,15 @@ const Essential8Form = (props) => {
           onChange={handleInputChange}
           required
         />
+        <br />
+        <select
+          id="Assessment"
+          name="Assessment"
+          required
+        >
+        <option value="">Select Assessment</option>
+        <option value="e8">Essential Eight</option>
+        </select>
         <br />
 
         {/* Add the checkbox */}

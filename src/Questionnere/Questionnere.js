@@ -1737,7 +1737,7 @@ Disclaimer: The Essential 8 maturity report provided herewith by Cyber Ethos is 
                     border: "1px solid grey",
                   }}
                 >
-                  Strategy #
+                  Strategy
                 </th>
                 <th
                   style={{
@@ -1792,7 +1792,7 @@ Disclaimer: The Essential 8 maturity report provided herewith by Cyber Ethos is 
           </table>
           <div>
             <h4 style={{ color: "rgb(251, 205, 50)" }}>
-              For complet assessment download the report:
+              For complete assessment download the report:
             </h4>
             <button onClick={handleDownloadPDF}>Download PDF</button>
           </div>
